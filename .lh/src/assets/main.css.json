@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/assets/main.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1671506547235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671506663638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n @import './base.css';\n \n-#app {\n+/* #app {\n   max-width: 1280px;\n   margin: 0 auto;\n   padding: 2rem;\n \n   font-weight: normal;\n-}\n+} */\n \n a,\n .green {\n   text-decoration: none;\n"
+                },
+                {
+                    "date": 1671506682463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,11 @@\n @import './base.css';\n \n-/* #app {\n+#app {\n   max-width: 1280px;\n-  margin: 0 auto;\n   padding: 2rem;\n-\n   font-weight: normal;\n-} */\n+}\n \n a,\n .green {\n   text-decoration: none;\n"
+                },
+                {
+                    "date": 1671506689124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n @import './base.css';\n \n #app {\n-  max-width: 1280px;\n   padding: 2rem;\n   font-weight: normal;\n }\n \n"
+                },
+                {
+                    "date": 1671506726250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n @import './base.css';\n \n #app {\n+  margin: 0 auto;\n   padding: 2rem;\n+\n   font-weight: normal;\n }\n \n a,\n"
+                },
+                {
+                    "date": 1671506734267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n @import './base.css';\n \n #app {\n+  max-width: 1280px;\n   margin: 0 auto;\n   padding: 2rem;\n \n   font-weight: normal;\n"
+                }
+            ],
+            "date": 1671506547235,
+            "name": "Commit-0",
+            "content": "@import './base.css';\n\n#app {\n  max-width: 1280px;\n  margin: 0 auto;\n  padding: 2rem;\n\n  font-weight: normal;\n}\n\na,\n.green {\n  text-decoration: none;\n  color: hsla(160, 100%, 37%, 1);\n  transition: 0.4s;\n}\n\n@media (hover: hover) {\n  a:hover {\n    background-color: hsla(160, 100%, 37%, 0.2);\n  }\n}"
+        }
+    ]
+}

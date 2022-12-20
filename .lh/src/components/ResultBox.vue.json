@@ -1,0 +1,406 @@
+{
+    "sourceFile": "src/components/ResultBox.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 97,
+            "patches": [
+                {
+                    "date": 1671444579835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671444790316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <template>\n     <div>\n-        \n+        test\n     </div>\n </template>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671445055022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,15 @@\n <template>\n     <div>\n-        test\n+        {{ value }}\n     </div>\n\\ No newline at end of file\n-</template>\n+</template>\n+\n+<script>\n+import { defineComponent } from '@vue/composition-api'\n+\n+export default({\n+    props:{\n+        value:String\n+    }\n+})\n+</script>\n"
+                },
+                {
+                    "date": 1671445080296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,8 @@\n import { defineComponent } from '@vue/composition-api'\n \n export default({\n     props:{\n-        value:String\n+        value:Object\n     }\n })\n\\ No newline at end of file\n-</script>\n+</script>\n"
+                },
+                {
+                    "date": 1671445098882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        {{ value }}\n+        {{ value.winner }}\n     </div>\n </template>\n \n <script>\n@@ -11,5 +11,5 @@\n     props:{\n         value:Object\n     }\n })\n-</script>\n\\ No newline at end of file\n+</script>\n"
+                },
+                {
+                    "date": 1671445225352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        {{ value.winner }}\n+        test\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445286767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,8 @@\n import { defineComponent } from '@vue/composition-api'\n \n export default({\n     props:{\n-        value:Object\n+        value:String\n     }\n })\n </script>\n"
+                },
+                {
+                    "date": 1671445360869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n     </div>\n </template>\n \n <script>\n-import { defineComponent } from '@vue/composition-api'\n \n export default({\n     props:{\n         value:String\n"
+                },
+                {
+                    "date": 1671445418158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        test\n+        {{ value.winner }}\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445456021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        {{ value.winner }}\n+        <div class=\"\" style=\"border: 4px block solid;\"></div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445473379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"border: 4px block solid;\"></div>\n+        <div class=\"\" style=\"border: 4px block solid;\">{{ value.winner }}</div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445515407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"border: 4px block solid;\">{{ value.winner }}</div>\n+        {{ value.winner }}\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445521259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        {{ value.winner }}\n+        <div class=\"\" style=\"border: 4px block solid;\">{{ value.winner }}</div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445593951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <template>\n     <div>\n         <div class=\"\" style=\"border: 4px block solid;\">{{ value.winner }}</div>\n+        123\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445599332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n <template>\n     <div>\n         <div class=\"\" style=\"border: 4px block solid;\">{{ value.winner }}</div>\n-        123\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445616667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"border: 4px block solid;\">{{ value.winner }}</div>\n+        <div class=\"\" style=\"background-color: red;\">{{ value.winner }}</div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445639898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"background-color: red;\">{{ value.winner }}</div>\n+        <div class=\"\" style=\"border: 1px black solid;\">{{ value.winner }}</div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445901765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"border: 1px black solid;\">{{ value.winner }}</div>\n+        <div class=\"\" style=\"border: 1px black solid;width:200px;aspect-ratio: 3/4;\">{{ value.winner }}</div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445913050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"border: 1px black solid;width:200px;aspect-ratio: 3/4;\">{{ value.winner }}</div>\n+        <div class=\"\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">{{ value.winner }}</div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671445987541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">{{ value.winner }}</div>\n+        <div class=\"\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;align-content: center;\">{{ value.winner }}</div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671446156327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;align-content: center;\">{{ value.winner }}</div>\n+        <div class=\"text-center\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">{{ value.winner }}</div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671446215292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"text-center\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">{{ value.winner }}</div>\n+        <div class=\"text-center leading-[100%]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">{{ value.winner }}</div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671446246842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"text-center leading-[100%]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">{{ value.winner }}</div>\n+        <div class=\"text-center leading-[150px]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">{{ value.winner }}</div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671446319618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n <template>\n     <div>\n-        <div class=\"text-center leading-[150px]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">{{ value.winner }}</div>\n+        <div class=\"text-center leading-[150px]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">\n+            {{ value.winner }}\n+            <div class=\"absolute top-[7px] left-[7px]\"></div>\n+        </div>\n     </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1671446330339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n     <div>\n         <div class=\"text-center leading-[150px]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">\n             {{ value.winner }}\n-            <div class=\"absolute top-[7px] left-[7px]\"></div>\n+            <div class=\"absolute top-[7px] left-[7px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1671446381179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n-        <div class=\"text-center leading-[150px]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">\n-            {{ value.winner }}\n+        <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">\n+            <div class=\"text-center leading-[150px]\" >{{ value.winner }}}</div>\n             <div class=\"absolute top-[7px] left-[7px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671446386478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">\n-            <div class=\"text-center leading-[150px]\" >{{ value.winner }}}</div>\n+            <div class=\"text-center leading-[150px]\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[7px] left-[7px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671446395494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">\n-            <div class=\"text-center leading-[150px]\" >{{ value.winner }}</div>\n+            <div class=\"text-center leading-[150px] text-[35px]\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[7px] left-[7px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671446467028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">\n-            <div class=\"text-center leading-[150px] text-[35px]\" >{{ value.winner }}</div>\n+            <div class=\"text-center leading-[150px] text-[35px] text-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[7px] left-[7px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671446486890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">\n-            <div class=\"text-center leading-[150px] text-[35px] text-extrabold\" >{{ value.winner }}</div>\n+            <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[7px] left-[7px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671446504185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n     <div>\n         <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n-            <div class=\"absolute top-[7px] left-[7px]\">{{ value.result_no }}</div>\n+            <div class=\"absolute top-[7px] left-[7px] text-[24px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1671446509957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n     <div>\n         <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n-            <div class=\"absolute top-[7px] left-[7px] text-[24px]\">{{ value.result_no }}</div>\n+            <div class=\"absolute top-[7px] left-[7px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1671446525394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;\">\n+        <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 15px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[7px] left-[7px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671446535400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 15px;\">\n+        <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 25px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[7px] left-[7px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671446553145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n     <div>\n-        <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 25px;\">\n+        <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n-            <div class=\"absolute top-[7px] left-[7px] text-[28px]\">{{ value.result_no }}</div>\n+            <div class=\"absolute top-[7px] left-[14px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1671446562556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n     <div>\n         <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n-            <div class=\"absolute top-[7px] left-[14px] text-[28px]\">{{ value.result_no }}</div>\n+            <div class=\"absolute top-[7px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1671446568960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n     <div>\n         <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n-            <div class=\"absolute top-[7px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n+            <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1671446603322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"bg-[gray]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671446608386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"bg-[gray]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"bg-[gra-100y]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671446615804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+<template>\n+    <div>\n+        <div class=\"bg-[gray-100]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+            <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n+            <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n+        </div>\n+    </div>\n+</template>\n+\n+<script>\n+\n+export default({\n+    props:{\n+        value:String\n+    }\n+})\n+</script>\n"
+                },
+                {
+                    "date": 1671446624805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"bg-[gray-100]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"bg-gray-100\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n@@ -14,21 +14,4 @@\n         value:String\n     }\n })\n </script>\n-<template>\n-    <div>\n-        <div class=\"bg-[gra-100y]\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n-            <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n-            <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n-        </div>\n-    </div>\n-</template>\n-\n-<script>\n-\n-export default({\n-    props:{\n-        value:String\n-    }\n-})\n-</script>\n"
+                },
+                {
+                    "date": 1671446633122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"bg-gray-100\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"bg-gray-50\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671503413299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\n-    <div>\n+    <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black\">\n         <div class=\"bg-gray-50\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n"
+                },
+                {
+                    "date": 1671503439720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n-    <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black\">\n-        <div class=\"bg-gray-50\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+    <div>\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671503451205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black\" style=\"border: 1px black solid;width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black\" style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671503469657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black\" style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white\" style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671503481476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white\" style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n-            <div class=\"text-center leading-[150px] text-[35px] font-extrabold\" >{{ value.winner }}</div>\n+            <div class=\"text-center leading-[150px] text-[42px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671503489353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white\" style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n-            <div class=\"text-center leading-[150px] text-[42px] font-extrabold\" >{{ value.winner }}</div>\n+            <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671503501876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white\" style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n-            <div class=\"absolute top-[10px] left-[28px] text-[28px]\">{{ value.result_no }}</div>\n+            <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1671503757094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white\" style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mx-8\"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671503763325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mx-8\"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mx-4\"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504332660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mx-4\"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white \"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504340016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white \"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mx-2\"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504345543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mx-2\"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white \"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504379108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white \"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mx-2\"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504604949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mx-2\"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2  mb-2\"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504653890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2  mb-2\"  style=\"width:200px;aspect-ratio: 4/3;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 3/4;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504662787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 3/4;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 3/3.5;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504669233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 3/3.5;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504676941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio:;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504685898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio:;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n             <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504722890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n-            <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n+            <div class=\"place-content-center text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671504728621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n-            <div class=\"place-content-center text-[84px] font-extrabold\" >{{ value.winner }}</div>\n+            <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671504742359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n-            <div class=\"text-center leading-[150px] text-[84px] font-extrabold\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671504748167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n+        <div class=\"place-content-center border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504755685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"place-content-center border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504780416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold bg-red\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671504793814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold bg-red-100\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671504818799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red-100\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671504827277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold bg-red-100\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671504860975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red-100\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold bg-red-100 place-self-center\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671504867914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red-100 place-self-center\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold bg-red-100\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671504896954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 place-content-center\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold bg-red-100\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671504991581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 place-content-center\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold bg-red-100\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671505004676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;aspect-ratio: 1;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height: 100px;border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold bg-red-100\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671505028873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height: 100px;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red-100\" >{{ value.winner }}</div>\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n+            <div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505078354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div>\n+            <div<div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505094975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div<div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n+            <div><div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505102441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div><div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n+            <div class=\"flex\"><div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505153601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div class=\"flex\"><div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n+            <div class=\"flex w-full\"><div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505164994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div class=\"flex w-full\"><div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n+            <div class=\"flex w-100\"><div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505213590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div class=\"flex w-100\"><div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n+            <div class=\"flex w-24\"><div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505294481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div class=\"flex w-24\"><div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div></div>\n+            <div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505311694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red-100 self-center\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold bg-red-100 align-middle\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505340789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red-100 align-middle\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold bg-red-100 leading-10\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505350752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red-100 leading-10\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold bg-red-100 leading-100\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505356901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red-100 leading-100\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold bg-red-100 leading-200\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671505449044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold bg-red-100 leading-200\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671505463675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold bg-red-100 leading-200\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671505653036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold bg-red-100 leading-200\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[84px] font-extrabold leading-200\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671506776093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white grid place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold leading-200\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671506802833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white grid place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold leading-200\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671506816870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white  grid place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold leading-200\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671506837876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white  grid place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold leading-200\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671506889396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center\"  style=\"width:200px;height:200px;border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center\"  style=\"border-radius: 35px;\">\n             <div class=\"text-center text-[84px] font-extrabold leading-200\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671507109767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center\"  style=\"border-radius: 35px;\">\n-            <div class=\"text-center text-[84px] font-extrabold leading-200\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[56px] font-extrabold leading-200\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671507143510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center\"  style=\"border-radius: 35px;\">\n+        <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center aspect-square\"  style=\"border-radius: 35px;\">\n             <div class=\"text-center text-[56px] font-extrabold leading-200\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671507159800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black bg-white mr-2 mb-2 grid place-items-center aspect-square\"  style=\"border-radius: 35px;\">\n-            <div class=\"text-center text-[56px] font-extrabold leading-200\" >{{ value.winner }}</div>\n+            <div class=\"text-center text-[56px] font-extrabold\" >{{ value.winner }}</div>\n             <div class=\"absolute top-[10px] left-[28px] text-[28px] font-extrabold\">{{ value.result_no }}</div>\n         </div>\n     </div>\n </template>\n"
+                }
+            ],
+            "date": 1671444579835,
+            "name": "Commit-0",
+            "content": "<template>\n    <div>\n        \n    </div>\n</template>"
+        }
+    ]
+}

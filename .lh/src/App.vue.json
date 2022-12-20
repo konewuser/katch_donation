@@ -1,0 +1,114 @@
+{
+    "sourceFile": "src/App.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 24,
+            "patches": [
+                {
+                    "date": 1671443823687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671444105665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n     </div>\n   </header>\n \n   <main>\n-    <TheWelcome />\n+    <ResultPage />\n   </main>\n </template>\n \n <style scoped>\n"
+                },
+                {
+                    "date": 1671444524283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <script setup>\n import HelloWorld from './components/HelloWorld.vue'\n import TheWelcome from './components/TheWelcome.vue'\n+import ResultPage from './components/ResultPage.vue'\n // Import the functions you need from the SDKs you need\n import { initializeApp } from \"firebase/app\";\n import { getAnalytics } from \"firebase/analytics\";\n // TODO: Add SDKs for Firebase products that you want to use\n"
+                },
+                {
+                    "date": 1671444536718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,16 +25,10 @@\n const analytics = getAnalytics(app);\n </script>\n \n <template>\n-  <header>\n-    <img alt=\"Vue logo\" class=\"logo\" src=\"./assets/logo.svg\" width=\"125\" height=\"125\" />\n+ \n \n-    <div class=\"wrapper\">\n-      <HelloWorld msg=\"You did it!\" />\n-    </div>\n-  </header>\n-\n   <main>\n     <ResultPage />\n   </main>\n </template>\n"
+                },
+                {
+                    "date": 1671501986867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,8 @@\n const analytics = getAnalytics(app);\n </script>\n \n <template>\n- \n-\n   <main>\n     <ResultPage />\n   </main>\n </template>\n"
+                },
+                {
+                    "date": 1671502006936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,4 +58,10 @@\n     flex-wrap: wrap;\n   }\n }\n </style>\n+\n+<style>\n+  body {\n+    background-color: #5EFFAF;\n+  }\n+</style>\n"
+                },
+                {
+                    "date": 1671502020675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,12 @@\n   display: block;\n   margin: 0 auto 2rem;\n }\n \n+body {\n+    background-color: #5EFFAF;\n+  }\n+\n @media (min-width: 1024px) {\n   header {\n     display: flex;\n     place-items: center;\n@@ -60,8 +64,6 @@\n }\n </style>\n \n <style>\n-  body {\n-    background-color: #5EFFAF;\n-  }\n+\n </style>\n"
+                },
+                {
+                    "date": 1671502027726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,12 @@\n   </main>\n </template>\n \n <style scoped>\n+  body {\n+    background-color: #5EFFAF;\n+  }\n+  \n header {\n   line-height: 1.5;\n }\n \n@@ -40,11 +44,8 @@\n   display: block;\n   margin: 0 auto 2rem;\n }\n \n-body {\n-    background-color: #5EFFAF;\n-  }\n \n @media (min-width: 1024px) {\n   header {\n     display: flex;\n"
+                },
+                {
+                    "date": 1671502059201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,12 +31,8 @@\n   </main>\n </template>\n \n <style scoped>\n-  body {\n-    background-color: #5EFFAF;\n-  }\n-  \n header {\n   line-height: 1.5;\n }\n \n@@ -63,8 +59,4 @@\n     flex-wrap: wrap;\n   }\n }\n </style>\n-\n-<style>\n-\n-</style>\n"
+                },
+                {
+                    "date": 1671502530034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n </script>\n \n <template>\n   <main>\n-    <ResultPage />\n+    <ResultPage  class=\"bg-green-600\"/>\n   </main>\n </template>\n \n <style scoped>\n"
+                },
+                {
+                    "date": 1671502544738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n </script>\n \n <template>\n   <main>\n-    <ResultPage  class=\"bg-green-600\"/>\n+    <ResultPage/>\n   </main>\n </template>\n \n <style scoped>\n"
+                },
+                {
+                    "date": 1671502550834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n const analytics = getAnalytics(app);\n </script>\n \n <template>\n-  <main>\n+  <main  class=\"bg-green-600\">\n     <ResultPage/>\n   </main>\n </template>\n \n"
+                },
+                {
+                    "date": 1671507728449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n const analytics = getAnalytics(app);\n </script>\n \n <template>\n-  <main  class=\"bg-green-600\">\n+  <main>\n     <ResultPage/>\n   </main>\n </template>\n \n@@ -58,5 +58,11 @@\n     place-items: flex-start;\n     flex-wrap: wrap;\n   }\n }\n+\n+@font-face {\n+  font-family: \"Merienda\";\n+  src: local(\"Merienda\"),\n+   url(./fonts/Merienda/Merienda-Regular.ttf) format(\"truetype\");\n+}\n </style>\n"
+                },
+                {
+                    "date": 1671507781978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,7 +62,7 @@\n \n @font-face {\n   font-family: \"Merienda\";\n   src: local(\"Merienda\"),\n-   url(./fonts/Merienda/Merienda-Regular.ttf) format(\"truetype\");\n+   url(@/src/assets/fonts/sunny_spells.ttf) format(\"truetype\");\n }\n </style>\n"
+                },
+                {
+                    "date": 1671507795142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n   }\n }\n \n @font-face {\n-  font-family: \"Merienda\";\n+  font-family: \"sunny\";\n   src: local(\"Merienda\"),\n    url(@/src/assets/fonts/sunny_spells.ttf) format(\"truetype\");\n }\n </style>\n"
+                },
+                {
+                    "date": 1671507836162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,8 +61,8 @@\n }\n \n @font-face {\n   font-family: \"sunny\";\n-  src: local(\"Merienda\"),\n+  src: local(\"Sunny Spells\"),\n    url(@/src/assets/fonts/sunny_spells.ttf) format(\"truetype\");\n }\n </style>\n"
+                },
+                {
+                    "date": 1671508259748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,5 +64,7 @@\n   font-family: \"sunny\";\n   src: local(\"Sunny Spells\"),\n    url(@/src/assets/fonts/sunny_spells.ttf) format(\"truetype\");\n }\n+\n+\n </style>\n"
+                },
+                {
+                    "date": 1671508423158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,12 +59,5 @@\n     flex-wrap: wrap;\n   }\n }\n \n-@font-face {\n-  font-family: \"sunny\";\n-  src: local(\"Sunny Spells\"),\n-   url(@/src/assets/fonts/sunny_spells.ttf) format(\"truetype\");\n-}\n-\n-\n-</style>\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671510520237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n \n // Initialize Firebase\n const app = initializeApp(firebaseConfig);\n const analytics = getAnalytics(app);\n+console.log('1234');\n </script>\n \n <template>\n   <main>\n"
+                },
+                {
+                    "date": 1671515365861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import ResultPage from './components/ResultPage.vue'\n // Import the functions you need from the SDKs you need\n import { initializeApp } from \"firebase/app\";\n import { getAnalytics } from \"firebase/analytics\";\n+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n // TODO: Add SDKs for Firebase products that you want to use\n // https://firebase.google.com/docs/web/setup#available-libraries\n \n // Your web app's Firebase configuration\n"
+                },
+                {
+                    "date": 1671515380668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n \n // Initialize Firebase\n const app = initializeApp(firebaseConfig);\n const analytics = getAnalytics(app);\n-console.log('1234');\n </script>\n \n <template>\n   <main>\n"
+                },
+                {
+                    "date": 1671515609849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,43 @@\n+<script setup>\n+import HelloWorld from './components/HelloWorld.vue'\n+import TheWelcome from './components/TheWelcome.vue'\n+import ResultPage from './components/ResultPage.vue'\n+\n+</script>\n+\n+<template>\n+  <main>\n+    <ResultPage/>\n+  </main>\n+</template>\n+\n+<style scoped>\n+header {\n+  line-height: 1.5;\n+}\n+\n+.logo {\n+  display: block;\n+  margin: 0 auto 2rem;\n+}\n+\n+\n+@media (min-width: 1024px) {\n+  header {\n+    display: flex;\n+    place-items: center;\n+    padding-right: calc(var(--section-gap) / 2);\n+  }\n+\n+  .logo {\n+    margin: 0 2rem 0 0;\n+  }\n+\n+  header .wrapper {\n+    display: flex;\n+    place-items: flex-start;\n+    flex-wrap: wrap;\n+  }\n+}\n+\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671515617385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,5 @@\n <script setup>\n-import HelloWorld from './components/HelloWorld.vue'\n-import TheWelcome from './components/TheWelcome.vue'\n-import ResultPage from './components/ResultPage.vue'\n-\n </script>\n \n <template>\n   <main>\n@@ -39,69 +35,5 @@\n     flex-wrap: wrap;\n   }\n }\n \n-</style>\n-<script setup>\n-import HelloWorld from './components/HelloWorld.vue'\n-import TheWelcome from './components/TheWelcome.vue'\n-import ResultPage from './components/ResultPage.vue'\n-// Import the functions you need from the SDKs you need\n-import { initializeApp } from \"firebase/app\";\n-import { getAnalytics } from \"firebase/analytics\";\n-const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n-// TODO: Add SDKs for Firebase products that you want to use\n-// https://firebase.google.com/docs/web/setup#available-libraries\n-\n-// Your web app's Firebase configuration\n-// For Firebase JS SDK v7.20.0 and later, measurementId is optional\n-const firebaseConfig = {\n-  apiKey: \"AIzaSyDYhI_yYWc0OYyMC2Rh1Dh4vyFLGBFaCyY\",\n-  authDomain: \"annualdinnerluckydraw.firebaseapp.com\",\n-  projectId: \"annualdinnerluckydraw\",\n-  storageBucket: \"annualdinnerluckydraw.appspot.com\",\n-  messagingSenderId: \"854928987784\",\n-  appId: \"1:854928987784:web:1c2731488c0deb47a7713d\",\n-  measurementId: \"G-RB892PWG7T\"\n-};\n-\n-// Initialize Firebase\n-const app = initializeApp(firebaseConfig);\n-const analytics = getAnalytics(app);\n-</script>\n-\n-<template>\n-  <main>\n-    <ResultPage/>\n-  </main>\n-</template>\n-\n-<style scoped>\n-header {\n-  line-height: 1.5;\n-}\n-\n-.logo {\n-  display: block;\n-  margin: 0 auto 2rem;\n-}\n-\n-\n-@media (min-width: 1024px) {\n-  header {\n-    display: flex;\n-    place-items: center;\n-    padding-right: calc(var(--section-gap) / 2);\n-  }\n-\n-  .logo {\n-    margin: 0 2rem 0 0;\n-  }\n-\n-  header .wrapper {\n-    display: flex;\n-    place-items: flex-start;\n-    flex-wrap: wrap;\n-  }\n-}\n-\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671515823863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n <script setup>\n+import HelloWorld from './components/HelloWorld.vue'\n+import TheWelcome from './components/TheWelcome.vue'\n+import ResultPage from './components/ResultPage.vue'\n </script>\n \n <template>\n   <main>\n"
+                },
+                {
+                    "date": 1671515831897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n <script setup>\n-import HelloWorld from './components/HelloWorld.vue'\n-import TheWelcome from './components/TheWelcome.vue'\n import ResultPage from './components/ResultPage.vue'\n </script>\n \n <template>\n"
+                }
+            ],
+            "date": 1671443823687,
+            "name": "Commit-0",
+            "content": "<script setup>\nimport HelloWorld from './components/HelloWorld.vue'\nimport TheWelcome from './components/TheWelcome.vue'\n// Import the functions you need from the SDKs you need\nimport { initializeApp } from \"firebase/app\";\nimport { getAnalytics } from \"firebase/analytics\";\n// TODO: Add SDKs for Firebase products that you want to use\n// https://firebase.google.com/docs/web/setup#available-libraries\n\n// Your web app's Firebase configuration\n// For Firebase JS SDK v7.20.0 and later, measurementId is optional\nconst firebaseConfig = {\n  apiKey: \"AIzaSyDYhI_yYWc0OYyMC2Rh1Dh4vyFLGBFaCyY\",\n  authDomain: \"annualdinnerluckydraw.firebaseapp.com\",\n  projectId: \"annualdinnerluckydraw\",\n  storageBucket: \"annualdinnerluckydraw.appspot.com\",\n  messagingSenderId: \"854928987784\",\n  appId: \"1:854928987784:web:1c2731488c0deb47a7713d\",\n  measurementId: \"G-RB892PWG7T\"\n};\n\n// Initialize Firebase\nconst app = initializeApp(firebaseConfig);\nconst analytics = getAnalytics(app);\n</script>\n\n<template>\n  <header>\n    <img alt=\"Vue logo\" class=\"logo\" src=\"./assets/logo.svg\" width=\"125\" height=\"125\" />\n\n    <div class=\"wrapper\">\n      <HelloWorld msg=\"You did it!\" />\n    </div>\n  </header>\n\n  <main>\n    <TheWelcome />\n  </main>\n</template>\n\n<style scoped>\nheader {\n  line-height: 1.5;\n}\n\n.logo {\n  display: block;\n  margin: 0 auto 2rem;\n}\n\n@media (min-width: 1024px) {\n  header {\n    display: flex;\n    place-items: center;\n    padding-right: calc(var(--section-gap) / 2);\n  }\n\n  .logo {\n    margin: 0 2rem 0 0;\n  }\n\n  header .wrapper {\n    display: flex;\n    place-items: flex-start;\n    flex-wrap: wrap;\n  }\n}\n</style>\n"
+        }
+    ]
+}

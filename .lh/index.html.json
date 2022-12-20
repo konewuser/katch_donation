@@ -1,0 +1,154 @@
+{
+    "sourceFile": "index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 34,
+            "patches": [
+                {
+                    "date": 1671446048393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671446073801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,20 @@\n   <script src=\"https://cdn.tailwindcss.com\"></script>\n   <title>Vite App</title>\n </head>\n \n+<script>\n+  tailwind.config = {\n+    theme: {\n+      extend: {\n+        colors: {\n+          clifford: '#da373d',\n+        }\n+      }\n+    }\n+  }\n+</script>\n+\n <body>\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n"
+                },
+                {
+                    "date": 1671446087523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,16 @@\n     }\n   }\n </script>\n \n+<style type=\"text/tailwindcss\">\n+  @layer utilities {\n+    .content-auto {\n+      content-visibility: auto;\n+    }\n+  }\n+</style>\n+\n <body>\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n"
+                },
+                {
+                    "date": 1671446104843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <!DOCTYPE html>\n <html lang=\"en\">\n \n+<script src=\"https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp\"></script>\n+\n <head>\n   <meta charset=\"UTF-8\">\n   <link rel=\"icon\" href=\"/favicon.ico\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+                },
+                {
+                    "date": 1671446111214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,15 @@\n <!DOCTYPE html>\n <html lang=\"en\">\n \n-<script src=\"https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp\"></script>\n-\n <head>\n   <meta charset=\"UTF-8\">\n   <link rel=\"icon\" href=\"/favicon.ico\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n   <script src=\"https://cdn.tailwindcss.com\"></script>\n   <title>Vite App</title>\n </head>\n-\n+<script src=\"https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp\"></script>\n <script>\n   tailwind.config = {\n     theme: {\n       extend: {\n"
+                },
+                {
+                    "date": 1671502063501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,12 @@\n     .content-auto {\n       content-visibility: auto;\n     }\n   }\n+\n+  body {\n+    background-color: #5EFFAF;\n+  }\n </style>\n \n <body>\n   <div id=\"app\"></div>\n"
+                },
+                {
+                    "date": 1671502079238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,11 @@\n     .content-auto {\n       content-visibility: auto;\n     }\n   }\n+</style>\n \n+<style>\n   body {\n     background-color: #5EFFAF;\n   }\n </style>\n"
+                },
+                {
+                    "date": 1671502107601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,14 @@\n         }\n       }\n     }\n   }\n+\n+    < style >\n+    body {\n+    background - color: #5EFFAF;\n+  }\n+</style >\n </script>\n \n <style type=\"text/tailwindcss\">\n   @layer utilities {\n@@ -28,14 +34,8 @@\n     }\n   }\n </style>\n \n-<style>\n-  body {\n-    background-color: #5EFFAF;\n-  }\n-</style>\n-\n <body>\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n"
+                },
+                {
+                    "date": 1671502147014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,15 +19,16 @@\n       }\n     }\n   }\n \n-    < style >\n-    body {\n-    background - color: #5EFFAF;\n-  }\n-</style >\n </script>\n \n+<style>\n+  body {\n+    background-color: #5EFFAF !important;\n+  }\n+</style>\n+\n <style type=\"text/tailwindcss\">\n   @layer utilities {\n     .content-auto {\n       content-visibility: auto;\n"
+                },
+                {
+                    "date": 1671502183771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,14 +21,8 @@\n   }\n \n </script>\n \n-<style>\n-  body {\n-    background-color: #5EFFAF !important;\n-  }\n-</style>\n-\n <style type=\"text/tailwindcss\">\n   @layer utilities {\n     .content-auto {\n       content-visibility: auto;\n"
+                },
+                {
+                    "date": 1671502585188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   tailwind.config = {\n     theme: {\n       extend: {\n         colors: {\n-          clifford: '#da373d',\n+          clifford: '#gkjkgl',\n         }\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1671502644228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n   tailwind.config = {\n     theme: {\n       extend: {\n         colors: {\n-          clifford: '#gkjkgl',\n+          clifford: '#da373d',\n+\n         }\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1671502755478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     theme: {\n       extend: {\n         colors: {\n           clifford: '#da373d',\n-\n+          bg: '#5EFFAF'\n         }\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1671502763267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     theme: {\n       extend: {\n         colors: {\n           clifford: '#da373d',\n-          bg: '#5EFFAF'\n+          bgGreen: '#5EFFAF'\n         }\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1671502781866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body>\n+<body class=\"bg-bgGreen\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671502797977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,8 @@\n     theme: {\n       extend: {\n         colors: {\n           clifford: '#da373d',\n-          bgGreen: '#5EFFAF'\n         }\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1671502977516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     theme: {\n       extend: {\n         colors: {\n           clifford: '#da373d',\n+          bgGreen: '#5EFFAF'\n         }\n       }\n     }\n   }\n@@ -29,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen\">\n+<body class=\"bg-bgGreen border-solid border-2\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671502994181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-2\">\n+<body class=\"bg-bgGreen border-solid border-4\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503001616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-4\">\n+<body class=\"bg-bgGreen border-solid border-10\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503006971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-10\">\n+<body class=\"bg-bgGreen border-solid border-4\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503031738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-4\">\n+<body class=\"bg-bgGreen border-double border-4\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503039721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-double border-4\">\n+<body class=\"bg-bgGreen border-solid border-4\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503061277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-4\">\n+<body class=\"bg-bgGreen border-solid border-4 border-indigo-600\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503088686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-4 border-indigo-600\">\n+<body class=\"bg-bgGreen border-solid border-4 border-indigo-1000\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503094224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-4 border-indigo-1000\">\n+<body class=\"bg-bgGreen border-solid border-4 border-black-100\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503119917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-4 border-black-100\">\n+<body class=\"bg-bgGreen border-solid border-4 border-indigo-400\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503128154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-4 border-indigo-400\">\n+<body class=\"bg-bgGreen border-solid border-4\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503217057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-4\">\n+<body class=\"bg-bgGreen border-solid border-4 border-black\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503316839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-4 border-black\">\n+<body class=\"bg-bgGreen border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503366039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black\">\n+<body class=\"bg-bgGreen border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black rounded-xl\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671503387654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\n   }\n </style>\n \n-<body class=\"bg-bgGreen border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black rounded-xl\">\n+<body class=\"bg-bgGreen border-solid border-l-2 border-t-2 border-r-8 border-b-8 border-black\">\n   <div id=\"app\"></div>\n   <script type=\"module\" src=\"/src/main.js\"></script>\n </body>\n \n"
+                },
+                {
+                    "date": 1671507488587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n     theme: {\n       extend: {\n         colors: {\n           clifford: '#da373d',\n-          bgGreen: '#5EFFAF'\n+          bgGreen: '#5EFFAF',\n+          yellow: '#F7FF1C'\n         }\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1671507543966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n       extend: {\n         colors: {\n           clifford: '#da373d',\n           bgGreen: '#5EFFAF',\n-          yellow: '#F7FF1C'\n+          kadenYellow: '#F7FF1C'\n         }\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1671508139522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,11 @@\n         colors: {\n           clifford: '#da373d',\n           bgGreen: '#5EFFAF',\n           kadenYellow: '#F7FF1C'\n+        },\n+        fontFamily: {\n+          'body': ['\"Open Sans\"']\n         }\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1671508183736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,8 @@\n         colors: {\n           clifford: '#da373d',\n           bgGreen: '#5EFFAF',\n           kadenYellow: '#F7FF1C'\n-        },\n-        fontFamily: {\n-          'body': ['\"Open Sans\"']\n         }\n       }\n     }\n   }\n"
+                }
+            ],
+            "date": 1671446048393,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n  <meta charset=\"UTF-8\">\n  <link rel=\"icon\" href=\"/favicon.ico\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <script src=\"https://cdn.tailwindcss.com\"></script>\n  <title>Vite App</title>\n</head>\n\n<body>\n  <div id=\"app\"></div>\n  <script type=\"module\" src=\"/src/main.js\"></script>\n</body>\n\n</html>"
+        }
+    ]
+}

@@ -1,0 +1,546 @@
+{
+    "sourceFile": "src/components/ResultPage.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 132,
+            "patches": [
+                {
+                    "date": 1671444346063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671444380441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div v-for=\"item in list\">\n+        <div v-for=\"item in list\" :key=\"idx\">\n         {{ item }}\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671444438584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div v-for=\"item in list\" :key=\"idx\">\n+        <div v-for=\"item in list\" :key=\"item\">\n         {{ item }}\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671444864180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n </template>\n \n <script lang=\"ts\">\n import Vue from 'vue'\n+import ResultBox from './ResultBox.vue'\n export default ({\n     data(){\n         return{\n             list:[222,333,444,555,666,777,888],\n"
+                },
+                {
+                    "date": 1671444947782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div v-for=\"item in list\" :key=\"item\">\n-        {{ item }}\n+        <ResultBox :value=\"item\"></ResultBox>\n         </div>\n     </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1671445153951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,18 @@\n import ResultBox from './ResultBox.vue'\n export default ({\n     data(){\n         return{\n-            list:[222,333,444,555,666,777,888],\n+            list:[\n+                {\n+                    result_no:1,\n+                    winner:42\n+                },\n+                {\n+                    result_no:2,\n+                    winner:43\n+                },\n+            ],\n         }\n     }\n })\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671445170004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div v-for=\"item in list\" :key=\"item\">\n+        <div v-for=\"item in list\" :key=\"item.result_no\">\n         <ResultBox :value=\"item\"></ResultBox>\n         </div>\n     </div>\n </template>\n"
+                },
+                {
+                    "date": 1671445241461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div v-for=\"item in list\" :key=\"item.result_no\">\n-        <ResultBox :value=\"item\"></ResultBox>\n+        123123123\n         </div>\n     </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1671445247010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div v-for=\"item in list\" :key=\"item.result_no\">\n-        123123123\n+        <ResultBox :value=\"item\"></ResultBox>\n         </div>\n     </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1671445268180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div v-for=\"item in list\" :key=\"item.result_no\">\n+        <div v-for=\"item in list\" :key=\"DataTransferItem\">\n         <ResultBox :value=\"item\"></ResultBox>\n         </div>\n     </div>\n </template>\n@@ -12,16 +12,9 @@\n export default ({\n     data(){\n         return{\n             list:[\n-                {\n-                    result_no:1,\n-                    winner:42\n-                },\n-                {\n-                    result_no:2,\n-                    winner:43\n-                },\n+                1,2,3\n             ],\n         }\n     }\n })\n"
+                },
+                {
+                    "date": 1671445351164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div v-for=\"item in list\" :key=\"DataTransferItem\">\n+        <div v-for=\"item in list\" :key=\"item\">\n         <ResultBox :value=\"item\"></ResultBox>\n         </div>\n     </div>\n </template>\n@@ -15,7 +15,10 @@\n             list:[\n                 1,2,3\n             ],\n         }\n+    },\n+    components:{\n+        ResultBox\n     }\n })\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671445381269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div v-for=\"item in list\" :key=\"item\">\n+        <div v-for=\"item in list\" :key=\"item.result_no\">\n         <ResultBox :value=\"item\"></ResultBox>\n         </div>\n     </div>\n </template>\n@@ -12,9 +12,16 @@\n export default ({\n     data(){\n         return{\n             list:[\n-                1,2,3\n+                {\n+                    result_no:1,\n+                    winner:42\n+                },\n+                {\n+                    result_no:2,\n+                    winner:43\n+                },\n             ],\n         }\n     },\n     components:{\n"
+                },
+                {
+                    "date": 1671445746636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n <template>\n     <div>\n-        <div v-for=\"item in list\" :key=\"item.result_no\">\n-        <ResultBox :value=\"item\"></ResultBox>\n+        <div class=\"\" style=\"display:flex;\">\n+            <div v-for=\"item in list\" :key=\"item.result_no\" style=\"width:33%\">\n+                <ResultBox :value=\"item\"></ResultBox>\n+            </div>\n         </div>\n     </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1671445818904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"\" style=\"display:flex;\">\n-            <div v-for=\"item in list\" :key=\"item.result_no\" style=\"width:33%\">\n+            <div v-for=\"item in list\" :key=\"item.result_no\" style=\"width:200px\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671445845246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n     <div>\n         <div class=\"\" style=\"display:flex;\">\n-            <div v-for=\"item in list\" :key=\"item.result_no\" style=\"width:200px\">\n+            <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671501903933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"display:flex;\">\n+        <div class=\"\" style=\"display:flex; background-color: '#5EFFAF';\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671501917068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"display:flex; background-color: '#5EFFAF';\">\n+        <div class=\"\" style=\"display:flex; background-color: #5EFFAF;\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671501926663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"display:flex; background-color: #5EFFAF;\">\n+        <div class=\"\" style=\"display:flex;\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671503779338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,102 @@\n                 {\n                     result_no:2,\n                     winner:43\n                 },\n+                {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },    {\n+                    result_no:2,\n+                    winner:43\n+                },\n             ],\n         }\n     },\n     components:{\n"
+                },
+                {
+                    "date": 1671503835801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"display:flex;\">\n+        <div class=\"\" style=\"display:flex-flow: row wrap;\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671503846244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"display:flex-flow: row wrap;\">\n+        <div class=\"\" style=\"flex-flow: row wrap;\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671503864380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"flex-flow: row wrap;\">\n+        <div class=\"\" style=\"\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671504079598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"\" style=\"\">\n+        <div class=\"grid grid-flow-col auto-cols-max\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671504111939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"grid grid-flow-col auto-cols-max\">\n+        <div class=\"flex flex-wrap\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671504631463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,9 +99,9 @@\n                     result_no:2,\n                     winner:43\n                 },    {\n                     result_no:2,\n-                    winner:43\n+                    winner:243\n                 },    {\n                     result_no:2,\n                     winner:43\n                 },    {\n"
+                },
+                {
+                    "date": 1671506934072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"flex flex-wrap\">\n+        <div class=\"grid grid-rows-4 grid-flow-col gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671506964812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"grid grid-rows-4 grid-flow-col gap-4\">\n+        <div class=\"grid grid-flow-col gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671506982279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"grid grid-flow-col gap-4\">\n+        <div class=\"grid-cols-4 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671506996722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"grid-cols-4 gap-4\">\n+        <div class=\"grid grid-cols-4 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671507068251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"grid grid-cols-4 gap-4\">\n+        <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671507080867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n+        <div class=\"grid grid-cols-2 md:grid-cols-4 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671507101731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"grid grid-cols-2 md:grid-cols-4 gap-4\">\n+        <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1671507181292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n                     result_no:2,\n                     winner:43\n                 },\n                 {\n-                    result_no:2,\n+                    result_no:3,\n                     winner:43\n                 },    {\n                     result_no:2,\n                     winner:43\n"
+                },
+                {
+                    "date": 1671507216537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <template>\n     <div>\n+        <div>Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671507508387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div>Konew Annual Dinner Lucky Draw</div>\n+        <div class=\"text-[yellow]\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671507515191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"text-[yellow]\">Konew Annual Dinner Lucky Draw</div>\n+        <div class=\"text-yellow\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671507548489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"text-yellow\">Konew Annual Dinner Lucky Draw</div>\n+        <div class=\"text-kadenYellow border\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671507555485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"text-kadenYellow border\">Konew Annual Dinner Lucky Draw</div>\n+        <div class=\"text-kadenYellow\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671507861174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"text-kadenYellow\">Konew Annual Dinner Lucky Draw</div>\n+        <div class=\"text-kadenYellow font-sunny\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671508273040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,5 +124,5 @@\n     components:{\n         ResultBox\n     }\n })\n-</script>\n\\ No newline at end of file\n+</script>\n"
+                },
+                {
+                    "date": 1671508301217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,4 +125,10 @@\n         ResultBox\n     }\n })\n </script>\n+<style>\n+ .description{\n+     font-family: \"Merienda\", Helvetica, Arial;\n+     font-size: 20px;\n+  }\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671508317649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,8 +127,8 @@\n })\n </script>\n <style>\n  .description{\n-     font-family: \"Merienda\", Helvetica, Arial;\n+     font-family: \"sunny\";\n      font-size: 20px;\n   }\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671508322907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,8 +127,8 @@\n })\n </script>\n <style>\n  .description{\n-     font-family: \"sunny\";\n+     font-family: \"sunny\", Helvetica, Arial;\n      font-size: 20px;\n   }\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671508369586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div class=\"text-kadenYellow font-sunny\">Konew Annual Dinner Lucky Draw</div>\n+        <div style=\"\" class=\"text-kadenYellow font-sunny description\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671508429282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div style=\"\" class=\"text-kadenYellow font-sunny description\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-kadenYellow font-sunny description\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n@@ -130,5 +130,12 @@\n  .description{\n      font-family: \"sunny\", Helvetica, Arial;\n      font-size: 20px;\n   }\n+\n+  @font-face {\n+  font-family: \"sunny\";\n+  src: local(\"Sunny Spells\"),\n+   url(@/src/assets/fonts/sunny_spells.ttf) format(\"truetype\");\n+}\n+\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671508459106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,8 +134,8 @@\n \n   @font-face {\n   font-family: \"sunny\";\n   src: local(\"Sunny Spells\"),\n-   url(@/src/assets/fonts/sunny_spells.ttf) format(\"truetype\");\n+   url(@/src/assets/fonts/sunny_spellfs.ttf) format(\"truetype\");\n }\n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671508490559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,9 +132,9 @@\n      font-size: 20px;\n   }\n \n   @font-face {\n-  font-family: \"sunny\";\n+  font-family: \"Sunny Spells\";\n   src: local(\"Sunny Spells\"),\n    url(@/src/assets/fonts/sunny_spellfs.ttf) format(\"truetype\");\n }\n \n"
+                },
+                {
+                    "date": 1671508567428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div  class=\"text-kadenYellow font-sunny description\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-kadenYellow font-sunny description drop-shadow-sm\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n@@ -127,9 +127,9 @@\n })\n </script>\n <style>\n  .description{\n-     font-family: \"sunny\", Helvetica, Arial;\n+     font-family: \"Sunny Spells\", Helvetica, Arial;\n      font-size: 20px;\n   }\n \n   @font-face {\n"
+                },
+                {
+                    "date": 1671508591419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div  class=\"text-kadenYellow font-sunny description drop-shadow-sm\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-kadenYellow font-sunny description drop-shadow-sm text-100px\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671508598399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div  class=\"text-kadenYellow font-sunny description drop-shadow-sm text-100px\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-kadenYellow font-sunny description drop-shadow-sm text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671508622840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div  class=\"text-kadenYellow font-sunny description drop-shadow-sm text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-kadenYellow font-sunny description drop-shadow-sm text-2xl\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671508640060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,9 +128,8 @@\n </script>\n <style>\n  .description{\n      font-family: \"Sunny Spells\", Helvetica, Arial;\n-     font-size: 20px;\n   }\n \n   @font-face {\n   font-family: \"Sunny Spells\";\n"
+                },
+                {
+                    "date": 1671508651422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div  class=\"text-kadenYellow font-sunny description drop-shadow-sm text-2xl\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-kadenYellow font-sunny description drop-shadow-sm text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671508668565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div  class=\"text-kadenYellow font-sunny description drop-shadow-sm text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-center text-kadenYellow font-sunny description drop-shadow-sm text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671508703047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div  class=\"text-center text-kadenYellow font-sunny description drop-shadow-sm text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-center text-kadenYellow font-sunny description text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n@@ -128,8 +128,9 @@\n </script>\n <style>\n  .description{\n      font-family: \"Sunny Spells\", Helvetica, Arial;\n+     text-shadow: 0 2px 4px;\n   }\n \n   @font-face {\n   font-family: \"Sunny Spells\";\n"
+                },
+                {
+                    "date": 1671508710486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,9 +128,9 @@\n </script>\n <style>\n  .description{\n      font-family: \"Sunny Spells\", Helvetica, Arial;\n-     text-shadow: 0 2px 4px;\n+     text-shadow: 0 2px 4px black;\n   }\n \n   @font-face {\n   font-family: \"Sunny Spells\";\n"
+                },
+                {
+                    "date": 1671508882883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div  class=\"text-center text-kadenYellow font-sunny description text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-center text-kadenYellow font-sunny description text-[100px] stroke-black\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671508902171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div  class=\"text-center text-kadenYellow font-sunny description text-[100px] stroke-black\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-center text-kadenYellow font-sunny description text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671508933989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div  class=\"text-center text-kadenYellow font-sunny description text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-center text-black font-sunny description text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671508944490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n     <div>\n-        <div  class=\"text-center text-black font-sunny description text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n+        <div  class=\"text-center text-kadenYellow font-sunny description text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n             <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n"
+                },
+                {
+                    "date": 1671509140590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,9 +128,9 @@\n </script>\n <style>\n  .description{\n      font-family: \"Sunny Spells\", Helvetica, Arial;\n-     text-shadow: 0 2px 4px black;\n+     text-shadow: 6px 7px 0px black;\n   }\n \n   @font-face {\n   font-family: \"Sunny Spells\";\n"
+                },
+                {
+                    "date": 1671509251429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,30 @@\n         }\n     },\n     components:{\n         ResultBox\n+    },\n+    methods:{\n+        readEmployees() {\n+      let employeesData = [];\n+      db.collection(\"employees\")\n+        .get()\n+        .then((querySnapshot) => {\n+          querySnapshot.forEach((doc) => {\n+           employeesData.push({\n+              id: doc.id,\n+              name: doc.data().name,\n+              date: doc.data().date,\n+            });\n+            console.log(doc.id, \" => \", doc.data());\n+          });\n+          return employeesData\n+        })\n+        .catch((error) => {\n+          console.log(\"Error getting documents: \", error);\n+        });\n     }\n+    }\n })\n </script>\n <style>\n  .description{\n"
+                },
+                {
+                    "date": 1671509300614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,11 @@\n     components:{\n         ResultBox\n     },\n     methods:{\n+       \n         readEmployees() {\n+            let db = \n       let employeesData = [];\n       db.collection(\"employees\")\n         .get()\n         .then((querySnapshot) => {\n"
+                },
+                {
+                    "date": 1671509410259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,29 +125,29 @@\n         ResultBox\n     },\n     methods:{\n        \n-        readEmployees() {\n-            let db = \n-      let employeesData = [];\n-      db.collection(\"employees\")\n-        .get()\n-        .then((querySnapshot) => {\n-          querySnapshot.forEach((doc) => {\n-           employeesData.push({\n-              id: doc.id,\n-              name: doc.data().name,\n-              date: doc.data().date,\n-            });\n-            console.log(doc.id, \" => \", doc.data());\n-          });\n-          return employeesData\n-        })\n-        .catch((error) => {\n-          console.log(\"Error getting documents: \", error);\n-        });\n+    //     readEmployees() {\n+    //         let db = ;\n+    //   let employeesData = [];\n+    //   db.collection(\"employees\")\n+    //     .get()\n+    //     .then((querySnapshot) => {\n+    //       querySnapshot.forEach((doc) => {\n+    //        employeesData.push({\n+    //           id: doc.id,\n+    //           name: doc.data().name,\n+    //           date: doc.data().date,\n+    //         });\n+    //         console.log(doc.id, \" => \", doc.data());\n+    //       });\n+    //       return employeesData\n+    //     })\n+    //     .catch((error) => {\n+    //       console.log(\"Error getting documents: \", error);\n+    //     });\n+    // }\n     }\n-    }\n })\n </script>\n <style>\n  .description{\n"
+                },
+                {
+                    "date": 1671509473487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n     components:{\n         ResultBox\n     },\n     methods:{\n-       \n+        const db = getFirestore();\n     //     readEmployees() {\n     //         let db = ;\n     //   let employeesData = [];\n     //   db.collection(\"employees\")\n"
+                },
+                {
+                    "date": 1671509498196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,10 @@\n <script lang=\"ts\">\n import Vue from 'vue'\n import ResultBox from './ResultBox.vue'\n export default ({\n+    const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');\n+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n     data(){\n         return{\n             list:[\n                 {\n@@ -125,29 +127,29 @@\n         ResultBox\n     },\n     methods:{\n         const db = getFirestore();\n-    //     readEmployees() {\n-    //         let db = ;\n-    //   let employeesData = [];\n-    //   db.collection(\"employees\")\n-    //     .get()\n-    //     .then((querySnapshot) => {\n-    //       querySnapshot.forEach((doc) => {\n-    //        employeesData.push({\n-    //           id: doc.id,\n-    //           name: doc.data().name,\n-    //           date: doc.data().date,\n-    //         });\n-    //         console.log(doc.id, \" => \", doc.data());\n-    //       });\n-    //       return employeesData\n-    //     })\n-    //     .catch((error) => {\n-    //       console.log(\"Error getting documents: \", error);\n-    //     });\n-    // }\n+        readEmployees() {\n+            let db = ;\n+      let employeesData = [];\n+      db.collection(\"employees\")\n+        .get()\n+        .then((querySnapshot) => {\n+          querySnapshot.forEach((doc) => {\n+           employeesData.push({\n+              id: doc.id,\n+              name: doc.data().name,\n+              date: doc.data().date,\n+            });\n+            console.log(doc.id, \" => \", doc.data());\n+          });\n+          return employeesData\n+        })\n+        .catch((error) => {\n+          console.log(\"Error getting documents: \", error);\n+        });\n     }\n+    }\n })\n </script>\n <style>\n  .description{\n"
+                },
+                {
+                    "date": 1671509504989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,11 @@\n \n <script lang=\"ts\">\n import Vue from 'vue'\n import ResultBox from './ResultBox.vue'\n+const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');\n+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n export default ({\n-    const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');\n-const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n     data(){\n         return{\n             list:[\n                 {\n"
+                },
+                {
+                    "date": 1671509520047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,10 +126,10 @@\n     components:{\n         ResultBox\n     },\n     methods:{\n-        const db = getFirestore();\n-        readEmployees() {\n+     \n+        readEmployees() {   const db = getFirestore();\n             let db = ;\n       let employeesData = [];\n       db.collection(\"employees\")\n         .get()\n"
+                },
+                {
+                    "date": 1671509699085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,9 +128,9 @@\n     },\n     methods:{\n      \n         readEmployees() {   const db = getFirestore();\n-            let db = ;\n+         \n       let employeesData = [];\n       db.collection(\"employees\")\n         .get()\n         .then((querySnapshot) => {\n"
+                },
+                {
+                    "date": 1671509735356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,12 +127,13 @@\n         ResultBox\n     },\n     methods:{\n      \n-        readEmployees() {   const db = getFirestore();\n+        readEmployees() {  \n+            const db = getFirestore();\n          \n       let employeesData = [];\n-      db.collection(\"employees\")\n+      db.collection(\"results\")\n         .get()\n         .then((querySnapshot) => {\n           querySnapshot.forEach((doc) => {\n            employeesData.push({\n"
+                },
+                {
+                    "date": 1671509767915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,110 +17,8 @@\n export default ({\n     data(){\n         return{\n             list:[\n-                {\n-                    result_no:1,\n-                    winner:42\n-                },\n-                {\n-                    result_no:2,\n-                    winner:43\n-                },\n-                {\n-                    result_no:3,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:243\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },    {\n-                    result_no:2,\n-                    winner:43\n-                },\n             ],\n         }\n     },\n     components:{\n"
+                },
+                {
+                    "date": 1671509774431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       db.collection(\"results\")\n         .get()\n         .then((querySnapshot) => {\n           querySnapshot.forEach((doc) => {\n-           employeesData.push({\n+            this.list.push({\n               id: doc.id,\n               name: doc.data().name,\n               date: doc.data().date,\n             });\n"
+                },
+                {
+                    "date": 1671509795852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,10 @@\n         .then((querySnapshot) => {\n           querySnapshot.forEach((doc) => {\n             this.list.push({\n               id: doc.id,\n-              name: doc.data().name,\n-              date: doc.data().date,\n+              result_no: doc.data().result_no,\n+              winner: doc.data().winner,\n             });\n             console.log(doc.id, \" => \", doc.data());\n           });\n           return employeesData\n"
+                },
+                {
+                    "date": 1671509811574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,8 @@\n               winner: doc.data().winner,\n             });\n             console.log(doc.id, \" => \", doc.data());\n           });\n-          return employeesData\n         })\n         .catch((error) => {\n           console.log(\"Error getting documents: \", error);\n         });\n"
+                },
+                {
+                    "date": 1671509819973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,10 @@\n     },\n     methods:{\n      \n         readEmployees() {  \n-            const db = getFirestore();\n-         \n-      let employeesData = [];\n+        const db = getFirestore();\n+    \n       db.collection(\"results\")\n         .get()\n         .then((querySnapshot) => {\n           querySnapshot.forEach((doc) => {\n"
+                },
+                {
+                    "date": 1671509864725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n     <div>\n         <div  class=\"text-center text-kadenYellow font-sunny description text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n-            <div v-for=\"item in list\" :key=\"item.result_no\">\n+            <div v-for=\"item in list\" :key=\"item\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671509885579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n     <div>\n         <div  class=\"text-center text-kadenYellow font-sunny description text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n-            <div v-for=\"item in list\" :key=\"item\">\n+            <div v-for=\"(item,index) in list\" :key=\"index\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671509907588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n     <div>\n         <div  class=\"text-center text-kadenYellow font-sunny description text-[100px]\">Konew Annual Dinner Lucky Draw</div>\n         <div class=\"grid grid-cols-2 md:grid-cols-6 gap-4\">\n-            <div v-for=\"(item,index) in list\" :key=\"index\">\n+            <div v-for=\"item in list\" :key=\"item.result_no\">\n                 <ResultBox :value=\"item\"></ResultBox>\n             </div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1671509936457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,11 @@\n     },\n     components:{\n         ResultBox\n     },\n+    created:{\n+        readEmployees();\n+    }\n     methods:{\n      \n         readEmployees() {  \n         const db = getFirestore();\n"
+                },
+                {
+                    "date": 1671509942685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n     },\n     components:{\n         ResultBox\n     },\n-    created:{\n-        readEmployees();\n+    created(){\n+        this.readEmployees();\n     }\n     methods:{\n      \n         readEmployees() {  \n"
+                },
+                {
+                    "date": 1671509950112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,11 +25,10 @@\n         ResultBox\n     },\n     created(){\n         this.readEmployees();\n-    }\n+    },\n     methods:{\n-     \n         readEmployees() {  \n         const db = getFirestore();\n     \n       db.collection(\"results\")\n"
+                },
+                {
+                    "date": 1671510019392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,8 @@\n \n <script lang=\"ts\">\n import Vue from 'vue'\n import ResultBox from './ResultBox.vue'\n-const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');\n const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n export default ({\n     data(){\n         return{\n"
+                },
+                {
+                    "date": 1671510073264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,8 @@\n \n <script lang=\"ts\">\n import Vue from 'vue'\n import ResultBox from './ResultBox.vue'\n-const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n export default ({\n     data(){\n         return{\n             list:[\n@@ -27,8 +26,9 @@\n         this.readEmployees();\n     },\n     methods:{\n         readEmployees() {  \n+            const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n         const db = getFirestore();\n     \n       db.collection(\"results\")\n         .get()\n"
+                },
+                {
+                    "date": 1671510107439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \n <script lang=\"ts\">\n import Vue from 'vue'\n import ResultBox from './ResultBox.vue'\n+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n export default ({\n     data(){\n         return{\n             list:[\n@@ -26,9 +27,8 @@\n         this.readEmployees();\n     },\n     methods:{\n         readEmployees() {  \n-            const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n         const db = getFirestore();\n     \n       db.collection(\"results\")\n         .get()\n"
+                },
+                {
+                    "date": 1671510116130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n         </div>\n     </div>\n </template>\n \n-<script lang=\"ts\">\n+<script>\n import Vue from 'vue'\n import ResultBox from './ResultBox.vue'\n const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n export default ({\n"
+                },
+                {
+                    "date": 1671510140155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,8 @@\n     </div>\n </template>\n \n <script>\n-import Vue from 'vue'\n import ResultBox from './ResultBox.vue'\n const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n export default ({\n     data(){\n"
+                },
+                {
+                    "date": 1671510294054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n </template>\n \n <script>\n import ResultBox from './ResultBox.vue'\n-const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n+import { getFirestore, Timestamp, FieldValue } from 'firebase-admin/firestore' ;\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671510348096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n </template>\n \n <script>\n import ResultBox from './ResultBox.vue'\n-import { getFirestore, Timestamp, FieldValue } from 'firebase-admin/firestore' ;\n+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671510560672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n </template>\n \n <script>\n import ResultBox from './ResultBox.vue'\n-const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n+// const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671510580207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,28 +25,28 @@\n     created(){\n         this.readEmployees();\n     },\n     methods:{\n-        readEmployees() {  \n-        const db = getFirestore();\n+    //     readEmployees() {  \n+    //     const db = getFirestore();\n     \n-      db.collection(\"results\")\n-        .get()\n-        .then((querySnapshot) => {\n-          querySnapshot.forEach((doc) => {\n-            this.list.push({\n-              id: doc.id,\n-              result_no: doc.data().result_no,\n-              winner: doc.data().winner,\n-            });\n-            console.log(doc.id, \" => \", doc.data());\n-          });\n-        })\n-        .catch((error) => {\n-          console.log(\"Error getting documents: \", error);\n-        });\n+    //   db.collection(\"results\")\n+    //     .get()\n+    //     .then((querySnapshot) => {\n+    //       querySnapshot.forEach((doc) => {\n+    //         this.list.push({\n+    //           id: doc.id,\n+    //           result_no: doc.data().result_no,\n+    //           winner: doc.data().winner,\n+    //         });\n+    //         console.log(doc.id, \" => \", doc.data());\n+    //       });\n+    //     })\n+    //     .catch((error) => {\n+    //       console.log(\"Error getting documents: \", error);\n+    //     });\n+    // }\n     }\n-    }\n })\n </script>\n <style>\n  .description{\n"
+                },
+                {
+                    "date": 1671510606948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,31 +22,31 @@\n     components:{\n         ResultBox\n     },\n     created(){\n-        this.readEmployees();\n+        // this.readEmployees();\n     },\n     methods:{\n-    //     readEmployees() {  \n-    //     const db = getFirestore();\n+        readEmployees() {  \n+        const db = getFirestore();\n     \n-    //   db.collection(\"results\")\n-    //     .get()\n-    //     .then((querySnapshot) => {\n-    //       querySnapshot.forEach((doc) => {\n-    //         this.list.push({\n-    //           id: doc.id,\n-    //           result_no: doc.data().result_no,\n-    //           winner: doc.data().winner,\n-    //         });\n-    //         console.log(doc.id, \" => \", doc.data());\n-    //       });\n-    //     })\n-    //     .catch((error) => {\n-    //       console.log(\"Error getting documents: \", error);\n-    //     });\n-    // }\n+      db.collection(\"results\")\n+        .get()\n+        .then((querySnapshot) => {\n+          querySnapshot.forEach((doc) => {\n+            this.list.push({\n+              id: doc.id,\n+              result_no: doc.data().result_no,\n+              winner: doc.data().winner,\n+            });\n+            console.log(doc.id, \" => \", doc.data());\n+          });\n+        })\n+        .catch((error) => {\n+          console.log(\"Error getting documents: \", error);\n+        });\n     }\n+    }\n })\n </script>\n <style>\n  .description{\n"
+                },
+                {
+                    "date": 1671510615060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     components:{\n         ResultBox\n     },\n     created(){\n-        // this.readEmployees();\n+         this.readEmployees();\n     },\n     methods:{\n         readEmployees() {  \n         const db = getFirestore();\n"
+                },
+                {
+                    "date": 1671510622543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n </template>\n \n <script>\n import ResultBox from './ResultBox.vue'\n-// const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n+ const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671510635594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n </template>\n \n <script>\n import ResultBox from './ResultBox.vue'\n- const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');\n+ const { getFirestore } = require('firebase-admin/firestore');\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671515106338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n </template>\n \n <script>\n import ResultBox from './ResultBox.vue'\n- const { getFirestore } = require('firebase-admin/firestore');\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671515118472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n          this.readEmployees();\n     },\n     methods:{\n         readEmployees() {  \n+            const { getFirestore } = require('firebase-admin/firestore');\n         const db = getFirestore();\n     \n       db.collection(\"results\")\n         .get()\n"
+                },
+                {
+                    "date": 1671515233873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,8 @@\n          this.readEmployees();\n     },\n     methods:{\n         readEmployees() {  \n-            const { getFirestore } = require('firebase-admin/firestore');\n         const db = getFirestore();\n     \n       db.collection(\"results\")\n         .get()\n"
+                },
+                {
+                    "date": 1671515274552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n </template>\n \n <script>\n import ResultBox from './ResultBox.vue'\n+import getFirestore from 'firebase-admin/firestore';\n export default ({\n     data(){\n         return{\n             list:[\n@@ -25,25 +26,25 @@\n          this.readEmployees();\n     },\n     methods:{\n         readEmployees() {  \n-        const db = getFirestore();\n+    //     const db = getFirestore();\n     \n-      db.collection(\"results\")\n-        .get()\n-        .then((querySnapshot) => {\n-          querySnapshot.forEach((doc) => {\n-            this.list.push({\n-              id: doc.id,\n-              result_no: doc.data().result_no,\n-              winner: doc.data().winner,\n-            });\n-            console.log(doc.id, \" => \", doc.data());\n-          });\n-        })\n-        .catch((error) => {\n-          console.log(\"Error getting documents: \", error);\n-        });\n+    //   db.collection(\"results\")\n+    //     .get()\n+    //     .then((querySnapshot) => {\n+    //       querySnapshot.forEach((doc) => {\n+    //         this.list.push({\n+    //           id: doc.id,\n+    //           result_no: doc.data().result_no,\n+    //           winner: doc.data().winner,\n+    //         });\n+    //         console.log(doc.id, \" => \", doc.data());\n+    //       });\n+    //     })\n+    //     .catch((error) => {\n+    //       console.log(\"Error getting documents: \", error);\n+    //     });\n     }\n     }\n })\n </script>\n"
+                },
+                {
+                    "date": 1671515301587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n </template>\n \n <script>\n import ResultBox from './ResultBox.vue'\n-import getFirestore from 'firebase-admin/firestore';\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671515697091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n </template>\n \n <script>\n import ResultBox from './ResultBox.vue'\n+import db from '../firebase/init'\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671515706889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,25 +26,25 @@\n          this.readEmployees();\n     },\n     methods:{\n         readEmployees() {  \n-    //     const db = getFirestore();\n+        const db = getFirestore();\n     \n-    //   db.collection(\"results\")\n-    //     .get()\n-    //     .then((querySnapshot) => {\n-    //       querySnapshot.forEach((doc) => {\n-    //         this.list.push({\n-    //           id: doc.id,\n-    //           result_no: doc.data().result_no,\n-    //           winner: doc.data().winner,\n-    //         });\n-    //         console.log(doc.id, \" => \", doc.data());\n-    //       });\n-    //     })\n-    //     .catch((error) => {\n-    //       console.log(\"Error getting documents: \", error);\n-    //     });\n+      db.collection(\"results\")\n+        .get()\n+        .then((querySnapshot) => {\n+          querySnapshot.forEach((doc) => {\n+            this.list.push({\n+              id: doc.id,\n+              result_no: doc.data().result_no,\n+              winner: doc.data().winner,\n+            });\n+            console.log(doc.id, \" => \", doc.data());\n+          });\n+        })\n+        .catch((error) => {\n+          console.log(\"Error getting documents: \", error);\n+        });\n     }\n     }\n })\n </script>\n"
+                },
+                {
+                    "date": 1671515736401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,9 @@\n     created(){\n          this.readEmployees();\n     },\n     methods:{\n-        readEmployees() {  \n-        const db = getFirestore();\n+        readEmployees() {\n     \n       db.collection(\"results\")\n         .get()\n         .then((querySnapshot) => {\n"
+                },
+                {
+                    "date": 1671515751792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n          this.readEmployees();\n     },\n     methods:{\n         readEmployees() {\n-    \n+            console.log('read');\n       db.collection(\"results\")\n         .get()\n         .then((querySnapshot) => {\n           querySnapshot.forEach((doc) => {\n"
+                },
+                {
+                    "date": 1671515782878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n     components:{\n         ResultBox\n     },\n     created(){\n+        console.log('read0');\n          this.readEmployees();\n     },\n     methods:{\n         readEmployees() {\n"
+                },
+                {
+                    "date": 1671515851555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,14 +22,12 @@\n     components:{\n         ResultBox\n     },\n     created(){\n-        console.log('read0');\n          this.readEmployees();\n     },\n     methods:{\n         readEmployees() {\n-            console.log('read');\n       db.collection(\"results\")\n         .get()\n         .then((querySnapshot) => {\n           querySnapshot.forEach((doc) => {\n"
+                },
+                {
+                    "date": 1671515917182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n          this.readEmployees();\n     },\n     methods:{\n         readEmployees() {\n+            console.log(db);\n       db.collection(\"results\")\n         .get()\n         .then((querySnapshot) => {\n           querySnapshot.forEach((doc) => {\n"
+                },
+                {
+                    "date": 1671516088187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,24 +26,24 @@\n          this.readEmployees();\n     },\n     methods:{\n         readEmployees() {\n-            console.log(db);\n-      db.collection(\"results\")\n-        .get()\n-        .then((querySnapshot) => {\n-          querySnapshot.forEach((doc) => {\n-            this.list.push({\n-              id: doc.id,\n-              result_no: doc.data().result_no,\n-              winner: doc.data().winner,\n-            });\n-            console.log(doc.id, \" => \", doc.data());\n-          });\n-        })\n-        .catch((error) => {\n-          console.log(\"Error getting documents: \", error);\n-        });\n+    //         console.log(db);\n+    //   db.collection(\"results\")\n+    //     .get()\n+    //     .then((querySnapshot) => {\n+    //       querySnapshot.forEach((doc) => {\n+    //         this.list.push({\n+    //           id: doc.id,\n+    //           result_no: doc.data().result_no,\n+    //           winner: doc.data().winner,\n+    //         });\n+    //         console.log(doc.id, \" => \", doc.data());\n+    //       });\n+    //     })\n+    //     .catch((error) => {\n+    //       console.log(\"Error getting documents: \", error);\n+    //     });\n     }\n     }\n })\n </script>\n"
+                },
+                {
+                    "date": 1671516103536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \n <script>\n import ResultBox from './ResultBox.vue'\n import db from '../firebase/init'\n+import { collection } from '@firebase/firestore';\n export default ({\n     data(){\n         return{\n             list:[\n@@ -26,8 +27,9 @@\n          this.readEmployees();\n     },\n     methods:{\n         readEmployees() {\n+            const ref = collection(db,'results')\n     //         console.log(db);\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n"
+                },
+                {
+                    "date": 1671516117151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,11 @@\n          this.readEmployees();\n     },\n     methods:{\n         readEmployees() {\n-            const ref = collection(db,'results')\n-    //         console.log(db);\n+            const ref = collection(db,'results');\n+            \n+             console.log(ref);\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n     //       querySnapshot.forEach((doc) => {\n"
+                },
+                {
+                    "date": 1671516207156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     },\n     methods:{\n         readEmployees() {\n             const ref = collection(db,'results');\n-            \n+            const sp = getDoc(ref);\n              console.log(ref);\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n"
+                },
+                {
+                    "date": 1671516215660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     methods:{\n         readEmployees() {\n             const ref = collection(db,'results');\n             const sp = getDoc(ref);\n-             console.log(ref);\n+             console.log(sp.data());\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n     //       querySnapshot.forEach((doc) => {\n"
+                },
+                {
+                    "date": 1671516225195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n <script>\n import ResultBox from './ResultBox.vue'\n import db from '../firebase/init'\n-import { collection } from '@firebase/firestore';\n+import { collection,getDoc } from '@firebase/firestore';\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671516231423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n <script>\n import ResultBox from './ResultBox.vue'\n import db from '../firebase/init'\n-import { collection,getDoc } from '@firebase/firestore';\n+import { collection } from '@firebase/firestore';\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671516242197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n <script>\n import ResultBox from './ResultBox.vue'\n import db from '../firebase/init'\n-import { collection } from '@firebase/firestore';\n+import { collection, getDoc } from '@firebase/firestore';\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671516271347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     },\n     methods:{\n         readEmployees() {\n             const ref = collection(db,'results');\n-            const sp = getDoc(ref);\n+            const sp = await getDoc(ref);\n              console.log(sp.data());\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n"
+                },
+                {
+                    "date": 1671516276585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,10 @@\n     },\n     methods:{\n         readEmployees() {\n             const ref = collection(db,'results');\n-            const sp = await getDoc(ref);\n-             console.log(sp.data());\n+            const sp = getDoc(ref);\n+             console.log(sp);\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n     //       querySnapshot.forEach((doc) => {\n"
+                },
+                {
+                    "date": 1671516319952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,11 @@\n     created(){\n          this.readEmployees();\n     },\n     methods:{\n-        readEmployees() {\n+        readEmployees() async {\n             const ref = collection(db,'results');\n-            const sp = getDoc(ref);\n+            let sp =await getDoc(ref);\n              console.log(sp);\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n"
+                },
+                {
+                    "date": 1671516339287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     created(){\n          this.readEmployees();\n     },\n     methods:{\n-        readEmployees() async {\n+         readEmployees() {\n             const ref = collection(db,'results');\n             let sp =await getDoc(ref);\n              console.log(sp);\n     //   db.collection(\"results\")\n"
+                },
+                {
+                    "date": 1671516362476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     created(){\n          this.readEmployees();\n     },\n     methods:{\n-         readEmployees() {\n+        async readEmployees() {\n             const ref = collection(db,'results');\n             let sp =await getDoc(ref);\n              console.log(sp);\n     //   db.collection(\"results\")\n"
+                },
+                {
+                    "date": 1671516396877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,10 @@\n     },\n     methods:{\n         async readEmployees() {\n             const ref = collection(db,'results');\n-            let sp =await getDoc(ref);\n-             console.log(sp);\n+            let sp = await getDoc(ref);\n+            sp.data().for\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n     //       querySnapshot.forEach((doc) => {\n"
+                },
+                {
+                    "date": 1671516413054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     },\n     methods:{\n         async readEmployees() {\n             const ref = collection(db,'results');\n-            let sp = await getDoc(ref);\n+            let sp = await getDocs(ref);\n             sp.data().for\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n"
+                },
+                {
+                    "date": 1671516452106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,11 @@\n     methods:{\n         async readEmployees() {\n             const ref = collection(db,'results');\n             let sp = await getDocs(ref);\n-            sp.data().for\n+            querySnap.forEach((doc) => {\n+        this.countries.push(doc.data())\n+      })\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n     //       querySnapshot.forEach((doc) => {\n"
+                },
+                {
+                    "date": 1671516459557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,11 @@\n     methods:{\n         async readEmployees() {\n             const ref = collection(db,'results');\n             let sp = await getDocs(ref);\n-            querySnap.forEach((doc) => {\n-        this.countries.push(doc.data())\n-      })\n+            sp.forEach((doc) => {\n+                this.countries.push(doc.data())\n+            })\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n     //       querySnapshot.forEach((doc) => {\n"
+                },
+                {
+                    "date": 1671516465294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n         async readEmployees() {\n             const ref = collection(db,'results');\n             let sp = await getDocs(ref);\n             sp.forEach((doc) => {\n-                this.countries.push(doc.data())\n+                this.list.push(doc.data())\n             })\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n"
+                },
+                {
+                    "date": 1671516495186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,9 @@\n     methods:{\n         async readEmployees() {\n             const ref = collection(db,'results');\n             let sp = await getDocs(ref);\n+            console.log(sp);\n             sp.forEach((doc) => {\n                 this.list.push(doc.data())\n             })\n     //   db.collection(\"results\")\n"
+                },
+                {
+                    "date": 1671516531990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n <script>\n import ResultBox from './ResultBox.vue'\n import db from '../firebase/init'\n-import { collection, getDoc } from '@firebase/firestore';\n+import { collection, getDoc, getDocs } from '@firebase/firestore';\n export default ({\n     data(){\n         return{\n             list:[\n"
+                },
+                {
+                    "date": 1671516719484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n <script>\n import ResultBox from './ResultBox.vue'\n import db from '../firebase/init'\n-import { collection, getDoc, getDocs } from '@firebase/firestore';\n+import { collection, getDoc, getDocs, onSnapshot } from '@firebase/firestore';\n export default ({\n     data(){\n         return{\n             list:[\n@@ -28,13 +28,15 @@\n     },\n     methods:{\n         async readEmployees() {\n             const ref = collection(db,'results');\n-            let sp = await getDocs(ref);\n-            console.log(sp);\n-            sp.forEach((doc) => {\n-                this.list.push(doc.data())\n-            })\n+            onSnapshot(ref,  (snapshot) => { },\n+  (error) => { })\n+            // let sp = await getDocs(ref);\n+            // console.log(sp);\n+            // sp.forEach((doc) => {\n+            //     this.list.push(doc.data())\n+            // })\n     //   db.collection(\"results\")\n     //     .get()\n     //     .then((querySnapshot) => {\n     //       querySnapshot.forEach((doc) => {\n"
+                },
+                {
+                    "date": 1671516734632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,15 @@\n     },\n     methods:{\n         async readEmployees() {\n             const ref = collection(db,'results');\n-            onSnapshot(ref,  (snapshot) => { },\n-  (error) => { })\n+            onSnapshot(ref,  (snapshot) => {\n+                          // console.log(sp);\n+            // sp.forEach((doc) => {\n+            //     this.list.push(doc.data())\n+            // })\n+             },\n+  (error) => { });\n             // let sp = await getDocs(ref);\n             // console.log(sp);\n             // sp.forEach((doc) => {\n             //     this.list.push(doc.data())\n"
+                },
+                {
+                    "date": 1671516740903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,12 +29,12 @@\n     methods:{\n         async readEmployees() {\n             const ref = collection(db,'results');\n             onSnapshot(ref,  (snapshot) => {\n-                          // console.log(sp);\n-            // sp.forEach((doc) => {\n-            //     this.list.push(doc.data())\n-            // })\n+                          console.log(snapshot);\n+                          snapshot.forEach((doc) => {\n+                this.list.push(doc.data())\n+            })\n              },\n   (error) => { });\n             // let sp = await getDocs(ref);\n             // console.log(sp);\n"
+                },
+                {
+                    "date": 1671516754161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n             const ref = collection(db,'results');\n             onSnapshot(ref,  (snapshot) => {\n                           console.log(snapshot);\n                           snapshot.forEach((doc) => {\n+                            this.list = [];\n                 this.list.push(doc.data())\n             })\n              },\n   (error) => { });\n"
+                },
+                {
+                    "date": 1671516771236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,12 @@\n     methods:{\n         async readEmployees() {\n             const ref = collection(db,'results');\n             onSnapshot(ref,  (snapshot) => {\n+                this.list = []\n                           console.log(snapshot);\n                           snapshot.forEach((doc) => {\n-                            this.list = [];\n+                    \n                 this.list.push(doc.data())\n             })\n              },\n   (error) => { });\n"
+                },
+                {
+                    "date": 1671516941969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     },\n     methods:{\n         async readEmployees() {\n             const ref = collection(db,'results');\n-            onSnapshot(ref,  (snapshot) => {\n+            onSnapshot(query(collection(db, 'users'), where('dob', '>', '1990')),  (snapshot) => {\n                 this.list = []\n                           console.log(snapshot);\n                           snapshot.forEach((doc) => {\n                     \n"
+                },
+                {
+                    "date": 1671516971305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n <script>\n import ResultBox from './ResultBox.vue'\n import db from '../firebase/init'\n-import { collection, getDoc, getDocs, onSnapshot } from '@firebase/firestore';\n+import { collection, getDoc, getDocs, onSnapshot, orderBy, query } from '@firebase/firestore';\n export default ({\n     data(){\n         return{\n             list:[\n@@ -27,10 +27,9 @@\n          this.readEmployees();\n     },\n     methods:{\n         async readEmployees() {\n-            const ref = collection(db,'results');\n-            onSnapshot(query(collection(db, 'users'), where('dob', '>', '1990')),  (snapshot) => {\n+            onSnapshot(query(collection(db, 'results'), orderBy('result_no')),  (snapshot) => {\n                 this.list = []\n                           console.log(snapshot);\n                           snapshot.forEach((doc) => {\n                     \n"
+                }
+            ],
+            "date": 1671444346063,
+            "name": "Commit-0",
+            "content": "<template>\n    <div>\n        <div v-for=\"item in list\">\n        {{ item }}\n        </div>\n    </div>\n</template>\n\n<script lang=\"ts\">\nimport Vue from 'vue'\nexport default ({\n    data(){\n        return{\n            list:[222,333,444,555,666,777,888],\n        }\n    }\n})\n</script>"
+        }
+    ]
+}
