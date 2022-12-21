@@ -1,0 +1,22 @@
+{
+    "sourceFile": "web/index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1671523089710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671524039634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,33 @@\n       }).then(function (appRunner) {\n         return appRunner.runApp();\n       });\n     });\n+\n   </script>\n   <script src=\"https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js\"></script>\n+  <script type=\"module\">\n+    // Import the functions you need from the SDKs you need\n+    import { initializeApp } from \"https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js\";\n+    import { getAnalytics } from \"https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js\";\n+    // TODO: Add SDKs for Firebase products that you want to use\n+    // https://firebase.google.com/docs/web/setup#available-libraries\n+\n+    // Your web app's Firebase configuration\n+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional\n+    const firebaseConfig = {\n+      apiKey: \"AIzaSyDYhI_yYWc0OYyMC2Rh1Dh4vyFLGBFaCyY\",\n+      authDomain: \"annualdinnerluckydraw.firebaseapp.com\",\n+      projectId: \"annualdinnerluckydraw\",\n+      storageBucket: \"annualdinnerluckydraw.appspot.com\",\n+      messagingSenderId: \"854928987784\",\n+      appId: \"1:854928987784:web:68be4d022b0807b4a7713d\",\n+      measurementId: \"G-HCBVJS9EZ5\"\n+    };\n+\n+    // Initialize Firebase\n+    const app = initializeApp(firebaseConfig);\n+    const analytics = getAnalytics(app);\n+  </script>\n </body>\n \n </html>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1671523089710,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html>\n\n<head>\n  <!--\n    If you are serving your web app in a path other than the root, change the\n    href value below to reflect the base path you are serving from.\n\n    The path provided below has to start and end with a slash \"/\" in order for\n    it to work correctly.\n\n    For more details:\n    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base\n\n    This is a placeholder for base href that will be replaced by the value of\n    the `--base-href` argument provided to `flutter build`.\n  -->\n  <base href=\"$FLUTTER_BASE_HREF\">\n\n  <meta charset=\"UTF-8\">\n  <meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n  <meta name=\"description\" content=\"A new Flutter project.\">\n\n  <!-- iOS meta tags & icons -->\n  <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n  <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">\n  <meta name=\"apple-mobile-web-app-title\" content=\"scanner\">\n  <link rel=\"apple-touch-icon\" href=\"icons/Icon-192.png\">\n\n  <!-- Favicon -->\n  <link rel=\"icon\" type=\"image/png\" href=\"favicon.png\" />\n\n  <title>scanner</title>\n  <link rel=\"manifest\" href=\"manifest.json\">\n\n  <script>\n    // The value below is injected by flutter build, do not touch.\n    var serviceWorkerVersion = null;\n  </script>\n  <!-- This script adds the flutter initialization JS code -->\n  <script src=\"flutter.js\" defer></script>\n</head>\n\n<body>\n  <script>\n    window.addEventListener('load', function (ev) {\n      // Download main.dart.js\n      _flutter.loader.loadEntrypoint({\n        serviceWorker: {\n          serviceWorkerVersion: serviceWorkerVersion,\n        }\n      }).then(function (engineInitializer) {\n        return engineInitializer.initializeEngine();\n      }).then(function (appRunner) {\n        return appRunner.runApp();\n      });\n    });\n  </script>\n  <script src=\"https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js\"></script>\n</body>\n\n</html>"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 132,
+            "activePatchIndex": 135,
             "patches": [
                 {
                     "date": 1671444346063,
@@ -536,6 +536,18 @@
                 {
                     "date": 1671516971305,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n <script>\n import ResultBox from './ResultBox.vue'\n import db from '../firebase/init'\n-import { collection, getDoc, getDocs, onSnapshot } from '@firebase/firestore';\n+import { collection, getDoc, getDocs, onSnapshot, orderBy, query } from '@firebase/firestore';\n export default ({\n     data(){\n         return{\n             list:[\n@@ -27,10 +27,9 @@\n          this.readEmployees();\n     },\n     methods:{\n         async readEmployees() {\n-            const ref = collection(db,'results');\n-            onSnapshot(query(collection(db, 'users'), where('dob', '>', '1990')),  (snapshot) => {\n+            onSnapshot(query(collection(db, 'results'), orderBy('result_no')),  (snapshot) => {\n                 this.list = []\n                           console.log(snapshot);\n                           snapshot.forEach((doc) => {\n                     \n"
+                },
+                {
+                    "date": 1671528457500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n \n   @font-face {\n   font-family: \"Sunny Spells\";\n   src: local(\"Sunny Spells\"),\n-   url(@/src/assets/fonts/sunny_spellfs.ttf) format(\"truetype\");\n+   url(@/assets/fonts/sunny_spellfs.ttf) format(\"truetype\");\n }\n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671528514578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n \n   @font-face {\n   font-family: \"Sunny Spells\";\n   src: local(\"Sunny Spells\"),\n-   url(@/assets/fonts/sunny_spellfs.ttf) format(\"truetype\");\n+   url(@/assets/fonts/sunny_spells.ttf) format(\"truetype\");\n }\n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671529079486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n          this.readEmployees();\n     },\n     methods:{\n         async readEmployees() {\n-            onSnapshot(query(collection(db, 'results'), orderBy('result_no')),  (snapshot) => {\n+            onSnapshot(query(collection(db, 'results'), orderBy('created_at')),  (snapshot) => {\n                 this.list = []\n                           console.log(snapshot);\n                           snapshot.forEach((doc) => {\n                     \n"
                 }
             ],
             "date": 1671444346063,

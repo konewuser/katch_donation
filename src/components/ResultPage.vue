@@ -28,7 +28,7 @@ export default ({
     },
     methods:{
         async readEmployees() {
-            onSnapshot(query(collection(db, 'results'), orderBy('result_no')),  (snapshot) => {
+            onSnapshot(query(collection(db, 'results'), orderBy('created_at')),  (snapshot) => {
                 this.list = []
                           console.log(snapshot);
                           snapshot.forEach((doc) => {
@@ -70,7 +70,7 @@ export default ({
   @font-face {
   font-family: "Sunny Spells";
   src: local("Sunny Spells"),
-   url(@/src/assets/fonts/sunny_spellfs.ttf) format("truetype");
+   url(@/assets/fonts/sunny_spells.ttf) format("truetype");
 }
 
 </style>

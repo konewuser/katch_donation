@@ -1,0 +1,46 @@
+{
+    "sourceFile": "lib/main.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1671523116958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671523151307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,8 @@\n         // Notice that the counter didn't reset back to zero; the application\n         // is not restarted.\n         primarySwatch: Colors.blue,\n       ),\n-      home: const MyHomePage(title: 'Flutter Demo Home Page'),\n+      home: const ScannerPage(),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1671524350413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,19 @@\n import 'package:flutter/material.dart';\n+import 'package:scanner/scanner.dart';\n \n-void main() {\n-  runApp(const MyApp());\n+Future<void> main() async {\n+  WidgetsFlutterBinding.ensureInitialized();\n+\n+  await Firebase.initializeApp(\n+    options: DefaultFirebaseOptions.currentPlatform,\n+  );\n+\n+  // You should have the Functions Emulator running locally to use it\n+  // https://firebase.google.com/docs/functions/local-emulator\n+  FirebaseFunctions.instance.useFunctionsEmulator('localhost', 5001);\n+\n+  runApp(MyApp());\n }\n \n class MyApp extends StatelessWidget {\n   const MyApp({super.key});\n"
+                },
+                {
+                    "date": 1671524390783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,12 @@\n+import 'package:firebase_core/firebase_core.dart';\n import 'package:flutter/material.dart';\n import 'package:scanner/scanner.dart';\n \n Future<void> main() async {\n   WidgetsFlutterBinding.ensureInitialized();\n \n-  await Firebase.initializeApp(\n-    options: DefaultFirebaseOptions.currentPlatform,\n-  );\n+  await Firebase.initializeApp();\n \n   // You should have the Functions Emulator running locally to use it\n   // https://firebase.google.com/docs/functions/local-emulator\n   FirebaseFunctions.instance.useFunctionsEmulator('localhost', 5001);\n"
+                },
+                {
+                    "date": 1671524397535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,8 @@\n Future<void> main() async {\n   WidgetsFlutterBinding.ensureInitialized();\n \n   await Firebase.initializeApp();\n-\n-  // You should have the Functions Emulator running locally to use it\n-  // https://firebase.google.com/docs/functions/local-emulator\n-  FirebaseFunctions.instance.useFunctionsEmulator('localhost', 5001);\n-\n   runApp(MyApp());\n }\n \n class MyApp extends StatelessWidget {\n"
+                },
+                {
+                    "date": 1671525197009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,15 @@\n \n Future<void> main() async {\n   WidgetsFlutterBinding.ensureInitialized();\n \n-  await Firebase.initializeApp();\n-  runApp(MyApp());\n+  await Firebase.initializeApp(\n+      options: FirebaseOptions(\n+          apiKey: 'AIzaSyDYhI_yYWc0OYyMC2Rh1Dh4vyFLGBFaCyY',\n+          appId: '1:854928987784:web:68be4d022b0807b4a7713d',\n+          messagingSenderId: messagingSenderId,\n+          projectId: projectId));\n+  runApp(const MyApp());\n }\n \n class MyApp extends StatelessWidget {\n   const MyApp({super.key});\n"
+                },
+                {
+                    "date": 1671525204235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   await Firebase.initializeApp(\n       options: FirebaseOptions(\n           apiKey: 'AIzaSyDYhI_yYWc0OYyMC2Rh1Dh4vyFLGBFaCyY',\n           appId: '1:854928987784:web:68be4d022b0807b4a7713d',\n-          messagingSenderId: messagingSenderId,\n+          messagingSenderId: '854928987784',\n           projectId: projectId));\n   runApp(const MyApp());\n }\n \n"
+                },
+                {
+                    "date": 1671525212225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,13 @@\n Future<void> main() async {\n   WidgetsFlutterBinding.ensureInitialized();\n \n   await Firebase.initializeApp(\n-      options: FirebaseOptions(\n+      options: const FirebaseOptions(\n           apiKey: 'AIzaSyDYhI_yYWc0OYyMC2Rh1Dh4vyFLGBFaCyY',\n           appId: '1:854928987784:web:68be4d022b0807b4a7713d',\n           messagingSenderId: '854928987784',\n-          projectId: projectId));\n+          projectId: 'annualdinnerluckydraw'));\n   runApp(const MyApp());\n }\n \n class MyApp extends StatelessWidget {\n"
+                }
+            ],
+            "date": 1671523116958,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\n\nvoid main() {\n  runApp(const MyApp());\n}\n\nclass MyApp extends StatelessWidget {\n  const MyApp({super.key});\n\n  // This widget is the root of your application.\n  @override\n  Widget build(BuildContext context) {\n    return MaterialApp(\n      title: 'Flutter Demo',\n      theme: ThemeData(\n        // This is the theme of your application.\n        //\n        // Try running your application with \"flutter run\". You'll see the\n        // application has a blue toolbar. Then, without quitting the app, try\n        // changing the primarySwatch below to Colors.green and then invoke\n        // \"hot reload\" (press \"r\" in the console where you ran \"flutter run\",\n        // or simply save your changes to \"hot reload\" in a Flutter IDE).\n        // Notice that the counter didn't reset back to zero; the application\n        // is not restarted.\n        primarySwatch: Colors.blue,\n      ),\n      home: const MyHomePage(title: 'Flutter Demo Home Page'),\n    );\n  }\n}\n"
+        }
+    ]
+}

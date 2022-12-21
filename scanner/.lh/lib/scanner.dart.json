@@ -1,0 +1,274 @@
+{
+    "sourceFile": "lib/scanner.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 64,
+            "patches": [
+                {
+                    "date": 1671523138300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671523143479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import 'package:flutter/material.dart';\n+\n class ScannerPage extends StatelessWidget {\n   const ScannerPage({super.key});\n \n   @override\n"
+                },
+                {
+                    "date": 1671523270070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,25 @@\n import 'package:flutter/material.dart';\n+import 'package:mobile_scanner/mobile_scanner.dart';\n \n class ScannerPage extends StatelessWidget {\n   const ScannerPage({super.key});\n \n   @override\n   Widget build(BuildContext context) {\n-    return Container();\n+    final snackBar = SnackBar(\n+      content: const Text('Yay! A SnackBar!'),\n+      action: SnackBarAction(\n+        label: 'Undo',\n+        onPressed: () {\n+          // Some code to undo the change.\n+        },\n+      ),\n+    );\n+    return Container(\n+      child: MobileScanner(\n+        allowDuplicates: false,\n+        onDetect: (barcode, args) => ScaffoldMessenger.of(context).showSnackBar(snackBar),\n+      ),\n+    );\n   }\n }\n"
+                },
+                {
+                    "date": 1671523281087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,23 @@\n+import 'package:flutter/material.dart';\n+import 'package:mobile_scanner/mobile_scanner.dart';\n+\n+class ScannerPage extends StatelessWidget {\n+  const ScannerPage({super.key});\n+\n+  @override\n+  Widget build(BuildContext context) {\n+    final snackBar = SnackBar(\n+      content: const Text('Yay! A SnackBar!'),\n+      action: SnackBarAction(\n+        label: 'Undo',\n+        onPressed: () {\n+          // Some code to undo the change.\n+        },\n+      ),\n+    );\n+    return MobileScanner(\n+      allowDuplicates: false,\n+      onDetect: (barcode, args) => ScaffoldMessenger.of(context).showSnackBar(snackBar),\n+    );\n+  }\n+}\n"
+                },
+                {
+                    "date": 1671523487621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,33 +14,10 @@\n           // Some code to undo the change.\n         },\n       ),\n     );\n-    return MobileScanner(\n-      allowDuplicates: false,\n-      onDetect: (barcode, args) => ScaffoldMessenger.of(context).showSnackBar(snackBar),\n-    );\n-  }\n-}\n-import 'package:flutter/material.dart';\n-import 'package:mobile_scanner/mobile_scanner.dart';\n-\n-class ScannerPage extends StatelessWidget {\n-  const ScannerPage({super.key});\n-\n-  @override\n-  Widget build(BuildContext context) {\n-    final snackBar = SnackBar(\n-      content: const Text('Yay! A SnackBar!'),\n-      action: SnackBarAction(\n-        label: 'Undo',\n-        onPressed: () {\n-          // Some code to undo the change.\n-        },\n-      ),\n-    );\n-    return Container(\n-      child: MobileScanner(\n+    return Scaffold(\n+      body: MobileScanner(\n         allowDuplicates: false,\n         onDetect: (barcode, args) => ScaffoldMessenger.of(context).showSnackBar(snackBar),\n       ),\n     );\n"
+                },
+                {
+                    "date": 1671523528341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,21 +5,25 @@\n   const ScannerPage({super.key});\n \n   @override\n   Widget build(BuildContext context) {\n-    final snackBar = SnackBar(\n+  \n+    return Scaffold(\n+      body: MobileScanner(\n+        allowDuplicates: false,\n+        onDetect: (barcode, args) {\n+\n+            final snackBar = SnackBar(\n       content: const Text('Yay! A SnackBar!'),\n       action: SnackBarAction(\n         label: 'Undo',\n         onPressed: () {\n           // Some code to undo the change.\n         },\n       ),\n     );\n-    return Scaffold(\n-      body: MobileScanner(\n-        allowDuplicates: false,\n-        onDetect: (barcode, args) => ScaffoldMessenger.of(context).showSnackBar(snackBar),\n+    ScaffoldMessenger.of(context).showSnackBar(snackBar)\n+        },\n       ),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1671523557995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,25 +5,23 @@\n   const ScannerPage({super.key});\n \n   @override\n   Widget build(BuildContext context) {\n-  \n     return Scaffold(\n       body: MobileScanner(\n         allowDuplicates: false,\n         onDetect: (barcode, args) {\n-\n-            final snackBar = SnackBar(\n-      content: const Text('Yay! A SnackBar!'),\n-      action: SnackBarAction(\n-        label: 'Undo',\n-        onPressed: () {\n-          // Some code to undo the change.\n+          final snackBar = SnackBar(\n+            content: const Text(barcode.rawValue ?? ''),\n+            action: SnackBarAction(\n+              label: 'Undo',\n+              onPressed: () {\n+                // Some code to undo the change.\n+              },\n+            ),\n+          );\n+          ScaffoldMessenger.of(context).showSnackBar(snackBar);\n         },\n       ),\n     );\n-    ScaffoldMessenger.of(context).showSnackBar(snackBar)\n-        },\n-      ),\n-    );\n   }\n }\n"
+                },
+                {
+                    "date": 1671523790974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n       body: MobileScanner(\n         allowDuplicates: false,\n         onDetect: (barcode, args) {\n           final snackBar = SnackBar(\n-            content: const Text(barcode.rawValue ?? ''),\n+            backgroundColor: Colors.red,\n+            content: Text(barcode.rawValue ?? ''),\n             action: SnackBarAction(\n               label: 'Undo',\n               onPressed: () {\n                 // Some code to undo the change.\n"
+                },
+                {
+                    "date": 1671523807399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,4 +25,8 @@\n       ),\n     );\n   }\n }\n+\n+void insetDB() {\n+  cloud_functions: ^4.0.6\n+}\n"
+                },
+                {
+                    "date": 1671524335728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,5 @@\n     );\n   }\n }\n \n-void insetDB() {\n-  cloud_functions: ^4.0.6\n-}\n+void insetDB() {}\n"
+                },
+                {
+                    "date": 1671524451321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,23 +6,28 @@\n \n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-      body: MobileScanner(\n-        allowDuplicates: false,\n-        onDetect: (barcode, args) {\n-          final snackBar = SnackBar(\n-            backgroundColor: Colors.red,\n-            content: Text(barcode.rawValue ?? ''),\n-            action: SnackBarAction(\n-              label: 'Undo',\n-              onPressed: () {\n-                // Some code to undo the change.\n-              },\n-            ),\n-          );\n-          ScaffoldMessenger.of(context).showSnackBar(snackBar);\n-        },\n+      body: Column(\n+        children: [\n+          TextButton(onPressed: () {}, child: Text('jkshg')),\n+          MobileScanner(\n+            allowDuplicates: false,\n+            onDetect: (barcode, args) {\n+              final snackBar = SnackBar(\n+                backgroundColor: Colors.red,\n+                content: Text(barcode.rawValue ?? ''),\n+                action: SnackBarAction(\n+                  label: 'Undo',\n+                  onPressed: () {\n+                    // Some code to undo the change.\n+                  },\n+                ),\n+              );\n+              ScaffoldMessenger.of(context).showSnackBar(snackBar);\n+            },\n+          ),\n+        ],\n       ),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1671524461325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,13 @@\n   Widget build(BuildContext context) {\n     return Scaffold(\n       body: Column(\n         children: [\n-          TextButton(onPressed: () {}, child: Text('jkshg')),\n+          TextButton(\n+              onPressed: () {\n+                insetDB('kfj');\n+              },\n+              child: Text('jkshg')),\n           MobileScanner(\n             allowDuplicates: false,\n             onDetect: (barcode, args) {\n               final snackBar = SnackBar(\n"
+                },
+                {
+                    "date": 1671524515136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,5 +35,7 @@\n     );\n   }\n }\n \n-void insetDB() {}\n+void insetDB(String winner) {\n+  const db = C\n+}\n"
+                },
+                {
+                    "date": 1671524567718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,6 +36,6 @@\n   }\n }\n \n void insetDB(String winner) {\n-  const db = C\n+  const db;\n }\n"
+                },
+                {
+                    "date": 1671524764937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import 'package:cloud_firestore/cloud_firestore.dart';\n import 'package:flutter/material.dart';\n import 'package:mobile_scanner/mobile_scanner.dart';\n \n class ScannerPage extends StatelessWidget {\n@@ -35,7 +36,7 @@\n     );\n   }\n }\n \n-void insetDB(String winner) {\n-  const db;\n+void insetDB(String winner) async {\n+  FirebaseFirestore.instance.collection('results').count().get();\n }\n"
+                },
+                {
+                    "date": 1671524787929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,6 +37,17 @@\n   }\n }\n \n void insetDB(String winner) async {\n-  FirebaseFirestore.instance.collection('results').count().get();\n+  final count = await FirebaseFirestore.instance.collection('results').count().get();\n+  final snackBar = SnackBar(\n+    backgroundColor: Colors.red,\n+    content: Text(barcode.rawValue ?? ''),\n+    action: SnackBarAction(\n+      label: 'Undo',\n+      onPressed: () {\n+        // Some code to undo the change.\n+      },\n+    ),\n+  );\n+  ScaffoldMessenger.of(context).showSnackBar(snackBar);\n }\n"
+                },
+                {
+                    "date": 1671524832677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,13 +36,13 @@\n     );\n   }\n }\n \n-void insetDB(String winner) async {\n+void insetDB(BuildContext context, String winner) async {\n   final count = await FirebaseFirestore.instance.collection('results').count().get();\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n-    content: Text(barcode.rawValue ?? ''),\n+    content: Text('${count} count'),\n     action: SnackBarAction(\n       label: 'Undo',\n       onPressed: () {\n         // Some code to undo the change.\n"
+                },
+                {
+                    "date": 1671524839687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,6 +48,7 @@\n         // Some code to undo the change.\n       },\n     ),\n   );\n+  // ignore: use_build_context_synchronously\n   ScaffoldMessenger.of(context).showSnackBar(snackBar);\n }\n"
+                },
+                {
+                    "date": 1671524856454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       body: Column(\n         children: [\n           TextButton(\n               onPressed: () {\n-                insetDB('kfj');\n+                insetDB(context, 'kfj');\n               },\n               child: Text('jkshg')),\n           MobileScanner(\n             allowDuplicates: false,\n"
+                },
+                {
+                    "date": 1671525027352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,23 +14,26 @@\n               onPressed: () {\n                 insetDB(context, 'kfj');\n               },\n               child: Text('jkshg')),\n-          MobileScanner(\n-            allowDuplicates: false,\n-            onDetect: (barcode, args) {\n-              final snackBar = SnackBar(\n-                backgroundColor: Colors.red,\n-                content: Text(barcode.rawValue ?? ''),\n-                action: SnackBarAction(\n-                  label: 'Undo',\n-                  onPressed: () {\n-                    // Some code to undo the change.\n-                  },\n-                ),\n-              );\n-              ScaffoldMessenger.of(context).showSnackBar(snackBar);\n-            },\n+          SizedBox(\n+            height: 300,\n+            child: MobileScanner(\n+              allowDuplicates: false,\n+              onDetect: (barcode, args) {\n+                final snackBar = SnackBar(\n+                  backgroundColor: Colors.red,\n+                  content: Text(barcode.rawValue ?? ''),\n+                  action: SnackBarAction(\n+                    label: 'Undo',\n+                    onPressed: () {\n+                      // Some code to undo the change.\n+                    },\n+                  ),\n+                );\n+                ScaffoldMessenger.of(context).showSnackBar(snackBar);\n+              },\n+            ),\n           ),\n         ],\n       ),\n     );\n"
+                },
+                {
+                    "date": 1671525055763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,35 +7,23 @@\n \n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-      body: Column(\n-        children: [\n-          TextButton(\n+      body: MobileScanner(\n+        allowDuplicates: false,\n+        onDetect: (barcode, args) {\n+          final snackBar = SnackBar(\n+            backgroundColor: Colors.red,\n+            content: Text(barcode.rawValue ?? ''),\n+            action: SnackBarAction(\n+              label: 'Undo',\n               onPressed: () {\n-                insetDB(context, 'kfj');\n+                // Some code to undo the change.\n               },\n-              child: Text('jkshg')),\n-          SizedBox(\n-            height: 300,\n-            child: MobileScanner(\n-              allowDuplicates: false,\n-              onDetect: (barcode, args) {\n-                final snackBar = SnackBar(\n-                  backgroundColor: Colors.red,\n-                  content: Text(barcode.rawValue ?? ''),\n-                  action: SnackBarAction(\n-                    label: 'Undo',\n-                    onPressed: () {\n-                      // Some code to undo the change.\n-                    },\n-                  ),\n-                );\n-                ScaffoldMessenger.of(context).showSnackBar(snackBar);\n-              },\n             ),\n-          ),\n-        ],\n+          );\n+          ScaffoldMessenger.of(context).showSnackBar(snackBar);\n+        },\n       ),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1671525138179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,23 +7,32 @@\n \n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-      body: MobileScanner(\n-        allowDuplicates: false,\n-        onDetect: (barcode, args) {\n-          final snackBar = SnackBar(\n-            backgroundColor: Colors.red,\n-            content: Text(barcode.rawValue ?? ''),\n-            action: SnackBarAction(\n-              label: 'Undo',\n+      body: Column(\n+        children: [\n+          TextButton(\n               onPressed: () {\n-                // Some code to undo the change.\n+                insetDB(context, 'kfj');\n               },\n-            ),\n-          );\n-          ScaffoldMessenger.of(context).showSnackBar(snackBar);\n-        },\n+              child: Text('jkshg')),\n+          MobileScanner(\n+            allowDuplicates: false,\n+            onDetect: (barcode, args) {\n+              final snackBar = SnackBar(\n+                backgroundColor: Colors.red,\n+                content: Text(barcode.rawValue ?? ''),\n+                action: SnackBarAction(\n+                  label: 'Undo',\n+                  onPressed: () {\n+                    // Some code to undo the change.\n+                  },\n+                ),\n+              );\n+              ScaffoldMessenger.of(context).showSnackBar(snackBar);\n+            },\n+          ),\n+        ],\n       ),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1671525234367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,23 +14,25 @@\n               onPressed: () {\n                 insetDB(context, 'kfj');\n               },\n               child: Text('jkshg')),\n-          MobileScanner(\n-            allowDuplicates: false,\n-            onDetect: (barcode, args) {\n-              final snackBar = SnackBar(\n-                backgroundColor: Colors.red,\n-                content: Text(barcode.rawValue ?? ''),\n-                action: SnackBarAction(\n-                  label: 'Undo',\n-                  onPressed: () {\n-                    // Some code to undo the change.\n-                  },\n-                ),\n-              );\n-              ScaffoldMessenger.of(context).showSnackBar(snackBar);\n-            },\n+          Expanded(\n+            child: MobileScanner(\n+              allowDuplicates: false,\n+              onDetect: (barcode, args) {\n+                final snackBar = SnackBar(\n+                  backgroundColor: Colors.red,\n+                  content: Text(barcode.rawValue ?? ''),\n+                  action: SnackBarAction(\n+                    label: 'Undo',\n+                    onPressed: () {\n+                      // Some code to undo the change.\n+                    },\n+                  ),\n+                );\n+                ScaffoldMessenger.of(context).showSnackBar(snackBar);\n+              },\n+            ),\n           ),\n         ],\n       ),\n     );\n"
+                },
+                {
+                    "date": 1671525270302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n void insetDB(BuildContext context, String winner) async {\n   final count = await FirebaseFirestore.instance.collection('results').count().get();\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n-    content: Text('${count} count'),\n+    content: Text('${count.count} count'),\n     action: SnackBarAction(\n       label: 'Undo',\n       onPressed: () {\n         // Some code to undo the change.\n"
+                },
+                {
+                    "date": 1671525276996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,12 +39,12 @@\n   }\n }\n \n void insetDB(BuildContext context, String winner) async {\n-  final count = await FirebaseFirestore.instance.collection('results').count().get();\n+  final res = await FirebaseFirestore.instance.collection('results').count().get();\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n-    content: Text('${count.count} count'),\n+    content: Text('${res.count} count'),\n     action: SnackBarAction(\n       label: 'Undo',\n       onPressed: () {\n         // Some code to undo the change.\n"
+                },
+                {
+                    "date": 1671525337919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,10 @@\n }\n \n void insetDB(BuildContext context, String winner) async {\n   final res = await FirebaseFirestore.instance.collection('results').count().get();\n+  final count = res.count;\n+  await FirebaseFirestore.instance.collection('results').add({'winner':winner,'result_no':'${count+1}'})\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n     content: Text('${res.count} count'),\n     action: SnackBarAction(\n"
+                },
+                {
+                    "date": 1671525412603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,44 +6,31 @@\n   const ScannerPage({super.key});\n \n   @override\n   Widget build(BuildContext context) {\n-    return Scaffold(\n-      body: Column(\n-        children: [\n-          TextButton(\n-              onPressed: () {\n-                insetDB(context, 'kfj');\n-              },\n-              child: Text('jkshg')),\n-          Expanded(\n-            child: MobileScanner(\n-              allowDuplicates: false,\n-              onDetect: (barcode, args) {\n-                final snackBar = SnackBar(\n-                  backgroundColor: Colors.red,\n-                  content: Text(barcode.rawValue ?? ''),\n-                  action: SnackBarAction(\n-                    label: 'Undo',\n-                    onPressed: () {\n-                      // Some code to undo the change.\n-                    },\n-                  ),\n-                );\n-                ScaffoldMessenger.of(context).showSnackBar(snackBar);\n-              },\n-            ),\n+    return MobileScanner(\n+      allowDuplicates: false,\n+      onDetect: (barcode, args) {\n+        final snackBar = SnackBar(\n+          backgroundColor: Colors.red,\n+          content: Text(barcode.rawValue ?? ''),\n+          action: SnackBarAction(\n+            label: 'Undo',\n+            onPressed: () {\n+              // Some code to undo the change.\n+            },\n           ),\n-        ],\n-      ),\n+        );\n+        ScaffoldMessenger.of(context).showSnackBar(snackBar);\n+      },\n     );\n   }\n }\n \n void insetDB(BuildContext context, String winner) async {\n   final res = await FirebaseFirestore.instance.collection('results').count().get();\n   final count = res.count;\n-  await FirebaseFirestore.instance.collection('results').add({'winner':winner,'result_no':'${count+1}'})\n+  await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${count + 1}'});\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n     content: Text('${res.count} count'),\n     action: SnackBarAction(\n"
+                },
+                {
+                    "date": 1671525548548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n   }\n }\n \n void insetDB(BuildContext context, String winner) async {\n-  final res = await FirebaseFirestore.instance.collection('results').count().get();\n-  final count = res.count;\n+  final res = await FirebaseFirestore.instance.collection('results').get();\n+  final docs = res.docs;\n   await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${count + 1}'});\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n     content: Text('${res.count} count'),\n"
+                },
+                {
+                    "date": 1671525621703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,12 @@\n \n void insetDB(BuildContext context, String winner) async {\n   final res = await FirebaseFirestore.instance.collection('results').get();\n   final docs = res.docs;\n+  bool exist = false;\n+  docs.forEach((element) {\n+    if (element.data()['winner'] == winner) {}\n+  });\n   await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${count + 1}'});\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n     content: Text('${res.count} count'),\n"
+                },
+                {
+                    "date": 1671525627843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   final res = await FirebaseFirestore.instance.collection('results').get();\n   final docs = res.docs;\n   bool exist = false;\n   docs.forEach((element) {\n-    if (element.data()['winner'] == winner) {}\n+    if (element.data()['winner'] == winner) exist = true;\n   });\n   await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${count + 1}'});\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n"
+                },
+                {
+                    "date": 1671525648057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,12 @@\n   bool exist = false;\n   docs.forEach((element) {\n     if (element.data()['winner'] == winner) exist = true;\n   });\n-  await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${count + 1}'});\n+  if (!exist) {\n+    await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${count + 1}'});\n+  }\n+\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n     content: Text('${res.count} count'),\n     action: SnackBarAction(\n"
+                },
+                {
+                    "date": 1671525653208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,8 @@\n   });\n   if (!exist) {\n     await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${count + 1}'});\n   }\n-\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n     content: Text('${res.count} count'),\n     action: SnackBarAction(\n"
+                },
+                {
+                    "date": 1671525670181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n   docs.forEach((element) {\n     if (element.data()['winner'] == winner) exist = true;\n   });\n   if (!exist) {\n-    await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${count + 1}'});\n+    await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${docs.length}'});\n   }\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n     content: Text('${res.count} count'),\n"
+                },
+                {
+                    "date": 1671525681896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,13 +33,13 @@\n   docs.forEach((element) {\n     if (element.data()['winner'] == winner) exist = true;\n   });\n   if (!exist) {\n-    await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${docs.length}'});\n+    await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${docs.length + 1}'});\n   }\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n-    content: Text('${res.count} count'),\n+    content: Text('${docs.length + 1} count'),\n     action: SnackBarAction(\n       label: 'Undo',\n       onPressed: () {\n         // Some code to undo the change.\n"
+                },
+                {
+                    "date": 1671525691771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,14 +12,8 @@\n       onDetect: (barcode, args) {\n         final snackBar = SnackBar(\n           backgroundColor: Colors.red,\n           content: Text(barcode.rawValue ?? ''),\n-          action: SnackBarAction(\n-            label: 'Undo',\n-            onPressed: () {\n-              // Some code to undo the change.\n-            },\n-          ),\n         );\n         ScaffoldMessenger.of(context).showSnackBar(snackBar);\n       },\n     );\n"
+                },
+                {
+                    "date": 1671525744145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,17 +20,18 @@\n   }\n }\n \n void insetDB(BuildContext context, String winner) async {\n+  Stirng textRes = '';\n   final res = await FirebaseFirestore.instance.collection('results').get();\n   final docs = res.docs;\n   bool exist = false;\n   docs.forEach((element) {\n     if (element.data()['winner'] == winner) exist = true;\n   });\n   if (!exist) {\n     await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${docs.length + 1}'});\n-  }\n+  } else {}\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n     content: Text('${docs.length + 1} count'),\n     action: SnackBarAction(\n"
+                },
+                {
+                    "date": 1671525767915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,18 +20,21 @@\n   }\n }\n \n void insetDB(BuildContext context, String winner) async {\n-  Stirng textRes = '';\n+  String textRes = '';\n   final res = await FirebaseFirestore.instance.collection('results').get();\n   final docs = res.docs;\n   bool exist = false;\n   docs.forEach((element) {\n     if (element.data()['winner'] == winner) exist = true;\n   });\n   if (!exist) {\n+    textRes = 'Success';\n     await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${docs.length + 1}'});\n-  } else {}\n+  } else {\n+    textRes = 'Duplication';\n+  }\n   final snackBar = SnackBar(\n     backgroundColor: Colors.red,\n     content: Text('${docs.length + 1} count'),\n     action: SnackBarAction(\n"
+                },
+                {
+                    "date": 1671525796631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,12 +31,12 @@\n   if (!exist) {\n     textRes = 'Success';\n     await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${docs.length + 1}'});\n   } else {\n-    textRes = 'Duplication';\n+    textRes = 'Duplicate';\n   }\n   final snackBar = SnackBar(\n-    backgroundColor: Colors.red,\n+    backgroundColor: textRes == 'Success' ? Colors.green : Colors.red,\n     content: Text('${docs.length + 1} count'),\n     action: SnackBarAction(\n       label: 'Undo',\n       onPressed: () {\n"
+                },
+                {
+                    "date": 1671525806195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,14 +36,8 @@\n   }\n   final snackBar = SnackBar(\n     backgroundColor: textRes == 'Success' ? Colors.green : Colors.red,\n     content: Text('${docs.length + 1} count'),\n-    action: SnackBarAction(\n-      label: 'Undo',\n-      onPressed: () {\n-        // Some code to undo the change.\n-      },\n-    ),\n   );\n   // ignore: use_build_context_synchronously\n   ScaffoldMessenger.of(context).showSnackBar(snackBar);\n }\n"
+                },
+                {
+                    "date": 1671525822540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,14 +8,10 @@\n   @override\n   Widget build(BuildContext context) {\n     return MobileScanner(\n       allowDuplicates: false,\n-      onDetect: (barcode, args) {\n-        final snackBar = SnackBar(\n-          backgroundColor: Colors.red,\n-          content: Text(barcode.rawValue ?? ''),\n-        );\n-        ScaffoldMessenger.of(context).showSnackBar(snackBar);\n+      onDetect: (barcode, args) async {\n+        insetDB();\n       },\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1671525832295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   Widget build(BuildContext context) {\n     return MobileScanner(\n       allowDuplicates: false,\n       onDetect: (barcode, args) async {\n-        insetDB();\n+        await insetDB(barcode.rawValue);\n       },\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1671525839881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   Widget build(BuildContext context) {\n     return MobileScanner(\n       allowDuplicates: false,\n       onDetect: (barcode, args) async {\n-        await insetDB(barcode.rawValue);\n+        await insetDB(context, barcode.rawValue);\n       },\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1671525853454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     );\n   }\n }\n \n-void insetDB(BuildContext context, String winner) async {\n+insetDB(BuildContext context, String winner) async {\n   String textRes = '';\n   final res = await FirebaseFirestore.instance.collection('results').get();\n   final docs = res.docs;\n   bool exist = false;\n"
+                },
+                {
+                    "date": 1671525880413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   Widget build(BuildContext context) {\n     return MobileScanner(\n       allowDuplicates: false,\n       onDetect: (barcode, args) async {\n-        await insetDB(context, barcode.rawValue);\n+        if (barcode.rawValue != null && barcode.rawValue.isNotEmpty) await insetDB(context, barcode.rawValue);\n       },\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1671525887222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   Widget build(BuildContext context) {\n     return MobileScanner(\n       allowDuplicates: false,\n       onDetect: (barcode, args) async {\n-        if (barcode.rawValue != null && barcode.rawValue.isNotEmpty) await insetDB(context, barcode.rawValue);\n+        if (barcode.rawValue != null && barcode.rawValue!.isNotEmpty) await insetDB(context, barcode.rawValue!);\n       },\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1671526320619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     textRes = 'Duplicate';\n   }\n   final snackBar = SnackBar(\n     backgroundColor: textRes == 'Success' ? Colors.green : Colors.red,\n-    content: Text('${docs.length + 1} count'),\n+    content: Text(textRes),\n   );\n   // ignore: use_build_context_synchronously\n   ScaffoldMessenger.of(context).showSnackBar(snackBar);\n }\n"
+                },
+                {
+                    "date": 1671526388334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,15 @@\n   const ScannerPage({super.key});\n \n   @override\n   Widget build(BuildContext context) {\n-    return MobileScanner(\n-      allowDuplicates: false,\n-      onDetect: (barcode, args) async {\n-        if (barcode.rawValue != null && barcode.rawValue!.isNotEmpty) await insetDB(context, barcode.rawValue!);\n-      },\n+    return Expanded(\n+      child: MobileScanner(\n+        allowDuplicates: false,\n+        onDetect: (barcode, args) async {\n+          if (barcode.rawValue != null && barcode.rawValue!.isNotEmpty) await insetDB(context, barcode.rawValue!);\n+        },\n+      ),\n     );\n   }\n }\n \n"
+                },
+                {
+                    "date": 1671526408217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,38 @@\n import 'package:cloud_firestore/cloud_firestore.dart';\n import 'package:flutter/material.dart';\n import 'package:mobile_scanner/mobile_scanner.dart';\n \n+class ScannerPage extends StatefulWidget {\n+  const ScannerPage({super.key});\n+\n+  @override\n+  State<ScannerPage> createState() => _ScannerPageState();\n+}\n+\n+class _ScannerPageState extends State<ScannerPage> {\n+  @override\n+  Widget build(BuildContext context) {\n+    return Container();\n+  }\n+}\n+\n class ScannerPage extends StatelessWidget {\n   const ScannerPage({super.key});\n \n   @override\n   Widget build(BuildContext context) {\n-    return Expanded(\n-      child: MobileScanner(\n-        allowDuplicates: false,\n-        onDetect: (barcode, args) async {\n-          if (barcode.rawValue != null && barcode.rawValue!.isNotEmpty) await insetDB(context, barcode.rawValue!);\n-        },\n-      ),\n+    return Column(\n+      children: [\n+        Expanded(\n+          child: MobileScanner(\n+            allowDuplicates: false,\n+            onDetect: (barcode, args) async {\n+              if (barcode.rawValue != null && barcode.rawValue!.isNotEmpty) await insetDB(context, barcode.rawValue!);\n+            },\n+          ),\n+        ),\n+      ],\n     );\n   }\n }\n \n"
+                },
+                {
+                    "date": 1671526423293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,17 +9,10 @@\n   State<ScannerPage> createState() => _ScannerPageState();\n }\n \n class _ScannerPageState extends State<ScannerPage> {\n-  @override\n-  Widget build(BuildContext context) {\n-    return Container();\n-  }\n-}\n+const ScannerPage({super.key});\n \n-class ScannerPage extends StatelessWidget {\n-  const ScannerPage({super.key});\n-\n   @override\n   Widget build(BuildContext context) {\n     return Column(\n       children: [\n@@ -35,8 +28,9 @@\n     );\n   }\n }\n \n+\n insetDB(BuildContext context, String winner) async {\n   String textRes = '';\n   final res = await FirebaseFirestore.instance.collection('results').get();\n   final docs = res.docs;\n"
+                },
+                {
+                    "date": 1671526446164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   State<ScannerPage> createState() => _ScannerPageState();\n }\n \n class _ScannerPageState extends State<ScannerPage> {\n-const ScannerPage({super.key});\n+  String msg = \"\";\n \n   @override\n   Widget build(BuildContext context) {\n     return Column(\n@@ -28,9 +28,8 @@\n     );\n   }\n }\n \n-\n insetDB(BuildContext context, String winner) async {\n   String textRes = '';\n   final res = await FirebaseFirestore.instance.collection('results').get();\n   final docs = res.docs;\n"
+                },
+                {
+                    "date": 1671526466293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,27 +26,27 @@\n         ),\n       ],\n     );\n   }\n-}\n \n-insetDB(BuildContext context, String winner) async {\n-  String textRes = '';\n-  final res = await FirebaseFirestore.instance.collection('results').get();\n-  final docs = res.docs;\n-  bool exist = false;\n-  docs.forEach((element) {\n-    if (element.data()['winner'] == winner) exist = true;\n-  });\n-  if (!exist) {\n-    textRes = 'Success';\n-    await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${docs.length + 1}'});\n-  } else {\n-    textRes = 'Duplicate';\n+  Future _insetDB(BuildContext context, String winner) async {\n+    String textRes = '';\n+    final res = await FirebaseFirestore.instance.collection('results').get();\n+    final docs = res.docs;\n+    bool exist = false;\n+    docs.forEach((element) {\n+      if (element.data()['winner'] == winner) exist = true;\n+    });\n+    if (!exist) {\n+      textRes = 'Success';\n+      await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${docs.length + 1}'});\n+    } else {\n+      textRes = 'Duplicate';\n+    }\n+    final snackBar = SnackBar(\n+      backgroundColor: textRes == 'Success' ? Colors.green : Colors.red,\n+      content: Text(textRes),\n+    );\n+    // ignore: use_build_context_synchronously\n+    ScaffoldMessenger.of(context).showSnackBar(snackBar);\n   }\n-  final snackBar = SnackBar(\n-    backgroundColor: textRes == 'Success' ? Colors.green : Colors.red,\n-    content: Text(textRes),\n-  );\n-  // ignore: use_build_context_synchronously\n-  ScaffoldMessenger.of(context).showSnackBar(snackBar);\n }\n"
+                },
+                {
+                    "date": 1671526474333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         Expanded(\n           child: MobileScanner(\n             allowDuplicates: false,\n             onDetect: (barcode, args) async {\n-              if (barcode.rawValue != null && barcode.rawValue!.isNotEmpty) await insetDB(context, barcode.rawValue!);\n+              if (barcode.rawValue != null && barcode.rawValue!.isNotEmpty) await _insetDB(context, barcode.rawValue!);\n             },\n           ),\n         ),\n       ],\n"
+                },
+                {
+                    "date": 1671526501399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,11 @@\n               if (barcode.rawValue != null && barcode.rawValue!.isNotEmpty) await _insetDB(context, barcode.rawValue!);\n             },\n           ),\n         ),\n+        Container(\n+          child: Text('Message: ${msg}'),\n+        )\n       ],\n     );\n   }\n \n"
+                },
+                {
+                    "date": 1671526526201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,22 +13,25 @@\n   String msg = \"\";\n \n   @override\n   Widget build(BuildContext context) {\n-    return Column(\n-      children: [\n-        Expanded(\n-          child: MobileScanner(\n-            allowDuplicates: false,\n-            onDetect: (barcode, args) async {\n-              if (barcode.rawValue != null && barcode.rawValue!.isNotEmpty) await _insetDB(context, barcode.rawValue!);\n-            },\n+    return Scaffold(\n+      body: Column(\n+        children: [\n+          Expanded(\n+            child: MobileScanner(\n+              allowDuplicates: false,\n+              onDetect: (barcode, args) async {\n+                if (barcode.rawValue != null && barcode.rawValue!.isNotEmpty)\n+                  await _insetDB(context, barcode.rawValue!);\n+              },\n+            ),\n           ),\n-        ),\n-        Container(\n-          child: Text('Message: ${msg}'),\n-        )\n-      ],\n+          Container(\n+            child: Text('Message: ${msg}'),\n+          )\n+        ],\n+      ),\n     );\n   }\n \n   Future _insetDB(BuildContext context, String winner) async {\n"
+                },
+                {
+                    "date": 1671526544205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n               },\n             ),\n           ),\n           Container(\n+            padding: EdgeInsets.all(40),\n             child: Text('Message: ${msg}'),\n           )\n         ],\n       ),\n"
+                },
+                {
+                    "date": 1671526601098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n               },\n             ),\n           ),\n           Container(\n-            padding: EdgeInsets.all(40),\n-            child: Text('Message: ${msg}'),\n+            bac\n+            height: 40,\n           )\n         ],\n       ),\n     );\n"
+                },
+                {
+                    "date": 1671526608995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,8 @@\n               },\n             ),\n           ),\n           Container(\n-            bac\n             height: 40,\n           )\n         ],\n       ),\n"
+                },
+                {
+                    "date": 1671526620150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n               },\n             ),\n           ),\n           Container(\n-            height: 40,\n+            height: 80,\n           )\n         ],\n       ),\n     );\n"
+                },
+                {
+                    "date": 1671526632671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n             ),\n           ),\n           Container(\n             height: 80,\n+            color: textRes == 'Success' ? Colors.green : Colors.red,,\n           )\n         ],\n       ),\n     );\n"
+                },
+                {
+                    "date": 1671526639577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             ),\n           ),\n           Container(\n             height: 80,\n-            color: textRes == 'Success' ? Colors.green : Colors.red,,\n+            color: msg == 'Success' ? Colors.green : Colors.red,\n           )\n         ],\n       ),\n     );\n"
+                },
+                {
+                    "date": 1671526649716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,12 +43,12 @@\n     docs.forEach((element) {\n       if (element.data()['winner'] == winner) exist = true;\n     });\n     if (!exist) {\n-      textRes = 'Success';\n+      msg = 'Success';\n       await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${docs.length + 1}'});\n     } else {\n-      textRes = 'Duplicate';\n+      msg = 'Duplicate';\n     }\n     final snackBar = SnackBar(\n       backgroundColor: textRes == 'Success' ? Colors.green : Colors.red,\n       content: Text(textRes),\n"
+                },
+                {
+                    "date": 1671526660087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,12 +48,7 @@\n       await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${docs.length + 1}'});\n     } else {\n       msg = 'Duplicate';\n     }\n-    final snackBar = SnackBar(\n-      backgroundColor: textRes == 'Success' ? Colors.green : Colors.red,\n-      content: Text(textRes),\n-    );\n-    // ignore: use_build_context_synchronously\n-    ScaffoldMessenger.of(context).showSnackBar(snackBar);\n+    setState(() {});\n   }\n }\n"
+                },
+                {
+                    "date": 1671526745740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import 'dart:async';\n+\n import 'package:cloud_firestore/cloud_firestore.dart';\n import 'package:flutter/material.dart';\n import 'package:mobile_scanner/mobile_scanner.dart';\n \n@@ -12,8 +14,19 @@\n class _ScannerPageState extends State<ScannerPage> {\n   String msg = \"\";\n \n   @override\n+  void initState() {\n+    // TODO: implement initState\n+    super.initState();\n+    Timer.periodic(const Duration(seconds: 5), (_) {\n+      setState(() {\n+        msg = '';\n+      });\n+    });\n+  }\n+\n+  @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n       body: Column(\n         children: [\n"
+                },
+                {
+                    "date": 1671526770972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,13 @@\n             ),\n           ),\n           Container(\n             height: 80,\n-            color: msg == 'Success' ? Colors.green : Colors.red,\n+            color: msg == ''\n+                ? Colors.white\n+                : msg == 'Success'\n+                    ? Colors.green\n+                    : Colors.red,\n           )\n         ],\n       ),\n     );\n"
+                },
+                {
+                    "date": 1671528894497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,11 @@\n       if (element.data()['winner'] == winner) exist = true;\n     });\n     if (!exist) {\n       msg = 'Success';\n-      await FirebaseFirestore.instance.collection('results').add({'winner': winner, 'result_no': '${docs.length + 1}'});\n+      await FirebaseFirestore.instance\n+          .collection('results')\n+          .add({'winner': winner, 'result_no': '${docs.length + 1}', 'created_at': FieldValue.serverTimestamp()});\n     } else {\n       msg = 'Duplicate';\n     }\n     setState(() {});\n"
+                }
+            ],
+            "date": 1671523138300,
+            "name": "Commit-0",
+            "content": "class ScannerPage extends StatelessWidget {\n  const ScannerPage({super.key});\n\n  @override\n  Widget build(BuildContext context) {\n    return Container();\n  }\n}\n"
+        }
+    ]
+}
