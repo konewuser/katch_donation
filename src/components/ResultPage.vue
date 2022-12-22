@@ -1,8 +1,8 @@
 <template>
 <div>
     <div class="flex flex-col w-[100%] h-[100vh] relative">
-        <div class="btn absolute top-10 left-10" @click="now_page-=1" v-if="now_page>=1">prev page</div>
-        <div class="btn absolute top-10 right-10" @click="now_page+=1" v-if="now_page<(this.list.length/30)-1">next page</div>
+        <div class="btn absolute top-[2%] left-[2%]" @click="now_page-=1" v-if="now_page>=1">prev page</div>
+        <div class="btn absolute top-[2%] right-[2%]" @click="now_page+=1" v-if="now_page<(this.list.length/30)-1">next page</div>
         <div class="text-center text-kadenYellow description text-[5vw]" style="pointer-events:none;">Konew Annual Dinner Lucky Draw</div>
         <div class="flex mb-10 mr-10 ml-10 flex-wrap">
             <div v-for="item in display_list[now_page]" :key="item.result_no" class="w-[16%] ">
@@ -79,8 +79,9 @@ export default ({
 .btn{
     border: 2px black solid;
     border-radius: 15px;
-    background-color: red;
-    font-size:26px;
-    padding: 10px;
+    background-color: greenyellow;
+    padding: 1vw;
+    font-size: 1vw;
+    line-height: 1vw;
 }
 </style>
