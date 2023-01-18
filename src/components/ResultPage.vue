@@ -6,7 +6,7 @@
             <div class="btn absolute top-[2%] right-[10%] cursor-pointer" @click="delEmployees">Del</div>
             <div class="w-[70%] mx-auto pt-[3%] pb-[1%] flex" style="pointer-events:none;"><img src="/banner.png" class="mx-auto "></div>
             <div class="flex mb-10 mr-10 ml-10 flex-wrap">
-                <div v-for="item in display_list[now_page]" :key="item.result_no" class="w-[10%] select-none">
+                <div v-for="item in display_list[now_page]" :key="item.result_no" class="w-1/6 select-none">
                     <ResultBox :value="item"></ResultBox>
                 </div>
             </div>
