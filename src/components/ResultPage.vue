@@ -1,7 +1,7 @@
 <template>
-    <div class="bg-[rgb(244,123,4)]">
+    <div class="bg-[#FF7A00]">
         <!-- <div class="">
-            <div class="bg-[rgb(244,123,4)] h-[70vh] relative">
+            <div class="bg-[#FF7A00] h-[70vh] relative">
                 <img src="@/assets/images/1.png" class="w-[100%] h-[70vh] absolute top_banner">
                 <div class="relative">
                     <img src="@/assets/images/top_banner_word.png">
@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="inline-block flex w-[100%]" v-show="!api_callback" >
-                        <div class="bg-[rgb(244,123,4)]  mx-auto mt-[20px] pr-[30px] pl-[30px] text-[24px] rounded-[12px] font-bold" @click="submit">
+                        <div class="bg-[#FF7A00]  mx-auto mt-[20px] pr-[30px] pl-[30px] text-[24px] rounded-[12px] font-bold" @click="submit">
                             提交
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                                 <div class="bg-black p-[20px] rounded-[50%]">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 507.506 507.506" style="enable-background:new 0 0 507.506 507.506;" xml:space="preserve" width="70" height="70">
                                         <g>
-                                            <path fill="rgb(244,123,4)" d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z" />
+                                            <path fill="#FF7A00" d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z" />
                                         </g>
                                     </svg>
                                 </div>
@@ -249,7 +249,7 @@ export default {
   left: 50%;
   background-color: black;
   padding-left: 10px;
-  color:rgb(244,123,4);
+  color:#FF7A00;
   transform: translate(-50%, -50%);
   letter-spacing:10px;
 }
