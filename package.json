@@ -8,8 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "firebase": "^9.15.0",
-    "firebase-admin": "^11.4.1",
+    "sweetalert2": "^11.7.5",
     "vue": "^3.2.45"
   },
   "devDependencies": {
