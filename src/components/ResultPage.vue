@@ -10,7 +10,7 @@
         </div> -->
         <div class="">
             <img src="@/assets/images/banner.jpg" class="w-[100%] hidden md:block banner">
-            <img src="@/assets/images/banner_02.jpg" class="w-[100%] md:hidden" style="object-fit: scale-down;">
+            <img src="@/assets/images/banner_02.jpg" class="w-[100%] md:hidden" style="object-fit: cover;">
         </div>
         <div class="max-w-[1980px] mx-auto text-[20px] pt-[70px] pl-[20px] pr-[20px]">
             <div class="rounded-[12px] mx-auto border-black border-2 relative">
