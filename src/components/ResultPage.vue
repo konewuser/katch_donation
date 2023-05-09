@@ -9,7 +9,7 @@
             </div>
         </div> -->
         <div class="">
-            <img src="@/assets/images/banner.jpg" class="w-[100%] hidden md:block h-[700px] banner">
+            <img src="@/assets/images/banner.jpg" class="w-[100%] hidden md:block banner">
             <img src="@/assets/images/banner_02.jpg" class="w-[100%] md:hidden" style="object-fit: scale-down;">
         </div>
         <div class="max-w-[1980px] mx-auto text-[20px] pt-[70px] pl-[20px] pr-[20px]">
