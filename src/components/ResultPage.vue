@@ -23,7 +23,7 @@
                     <div class="pt-[15px]">3&nbsp&nbsp&nbsp&nbsp成為Katch會員 + 預備《Katch Our Life方皓玟音樂會》門票票尾</div>
                     <div class="text-[8px] pt-[10px]">
                         *受條款及細則約束<br>
-                        推廣生意的競賽牌照號碼:xxxxxx
+                        推廣生意的競賽牌照號碼:57013
                     </div>
                 </div>
             </div>
