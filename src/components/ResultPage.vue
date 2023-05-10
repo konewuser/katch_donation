@@ -62,8 +62,8 @@
                         </div>
                     </div>
 
-                    <div class="inline-block flex w-[100%]" v-show="!api_callback&&!disable" style="cursor: pointer;">
-                        <div class="bg-[#FF7A00]  mx-auto mt-[20px] pr-[30px] pl-[30px] text-[24px] rounded-[12px] font-bold" @click="submit">
+                    <div class="inline-block flex w-[100%]" v-show="!api_callback&&!disable">
+                        <div class="bg-[#FF7A00]  mx-auto mt-[20px] pr-[30px] pl-[30px] text-[24px] rounded-[12px] font-bold" @click="submit" style="cursor: pointer;">
                             提交
                         </div>
                     </div>
