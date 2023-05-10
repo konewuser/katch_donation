@@ -188,7 +188,7 @@ export default {
             return 
         }
 
-        if(!/^Katch1\d{5}$/.test(this.katch_id)){
+        if(!/^[Kk]atch1\d{5}$/.test(this.katch_id)){
             Swal.fire(
                 'Katch會員編號錯誤'
             )
@@ -211,7 +211,7 @@ export default {
 
         var katch_id = this.katch_id.replace("katch1","").replace("Katch1","")
 
-        var api_call = await fetch('http://kclub_api.test:8080/api/katch_our_life_event', {
+        var api_call = await fetch('https://katch-app-api-uat.azurewebsites.net/api/katch_our_life_event', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
