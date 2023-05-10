@@ -186,6 +186,7 @@ export default {
             Swal.fire(
                 '請輸入所有資料'
             )
+            this.disable = false;
             return 
         }
 
@@ -193,6 +194,7 @@ export default {
             Swal.fire(
                 'Katch會員編號錯誤'
             )
+            this.disable = false;
             return 
         }
 
@@ -200,6 +202,7 @@ export default {
             Swal.fire(
                 '香港身分證號碼錯誤'
             )
+            this.disable = false;
             return 
         }
 
@@ -207,6 +210,7 @@ export default {
             Swal.fire(
                 '門票編號錯誤'
             )
+            this.disable = false;
             return 
         }
 
@@ -225,7 +229,6 @@ export default {
         }),
       })
       let result = await api_call.json();
-      console.log(result);
       if(result.result == true){
         this.api_callback = true;
         this.disable = false;
