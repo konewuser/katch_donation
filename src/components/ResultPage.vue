@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="inline-block flex w-[100%]" v-show="!api_callback" >
+                    <div class="inline-block flex w-[100%]" v-show="!api_callback&&!disable" style="cursor: pointer;">
                         <div class="bg-[#FF7A00]  mx-auto mt-[20px] pr-[30px] pl-[30px] text-[24px] rounded-[12px] font-bold" @click="submit">
                             提交
                         </div>
@@ -169,6 +169,7 @@ export default {
         ticket_id:"",
         api:"",
         api_callback:false,
+        disable:false,
     }
   },
   created(){
@@ -180,7 +181,7 @@ export default {
   },
   methods: {
     async submit(){
-
+        this.disable = true;
         if(this.name == "" ||this.ID == "" ||this.katch_id == "" ||this.ticket_id == "" ){
             Swal.fire(
                 '請輸入所有資料'
@@ -227,7 +228,9 @@ export default {
       console.log(result);
       if(result.result == true){
         this.api_callback = true;
+        this.disable = false;
       }else{
+        this.disable = false;
         Swal.fire(
             result.message
         )
