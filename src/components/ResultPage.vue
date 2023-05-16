@@ -14,7 +14,7 @@
         </div>
         <div class="max-w-[1980px] mx-auto text-[20px] pt-[70px] pl-[20px] pr-[20px]">
             <div class="rounded-[12px] mx-auto border-black border-2 relative">
-                <div class="rounded-[8px] centered-element font-[900] text-[3vw] w-[30vw] max-w-[400px] text-center lg:text-[30px]">
+                <div class="rounded-[8px] centered-element font-[900] md:text-[3vw] md:w-[30vw] md:max-w-[400px] text-center lg:text-[30px] text-[4vw] min-w-[300px] w-[40vw]">
                     即睇參加流程
                 </div>
                 <div class="bg-[white] w-[100%] h-[100%] rounded-[12px] p-[20px] pt-[50px] font-bold">
@@ -30,7 +30,7 @@
         </div>
         <div class="max-w-[1980px] mx-auto text-[12px] mt-[70px] pl-[20px] pr-[20px]">
             <div class="rounded-[12px] mx-auto border-black border-2 relative">
-                <div class="rounded-[8px] centered-element font-[900] text-[3vw] w-[30vw] max-w-[400px] text-center lg:text-[30px]">
+                <div class="rounded-[8px] centered-element font-[900] md:text-[3vw] md:w-[30vw] md:max-w-[400px] text-center lg:text-[30px] text-[4vw] min-w-[300px] w-[40vw]">
                     立即參加
                 </div>
                 <div class="bg-[white] w-[100%] rounded-[12px] p-[20px] pt-[50px] font-bold">
