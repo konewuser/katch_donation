@@ -152,6 +152,9 @@
                 <li>
                     本條款在所有方面均受香港特別行政區法律的管限,並鬚根據香港特別行政區法律的解釋。雙方得受香港特別行政區法院的專屬管轄權管轄。
                 </li>
+                <li>
+                    推廣生意的競賽牌照號碼:57013
+                </li>
             </ol>
         </div>
     </div>
@@ -173,7 +176,7 @@ export default {
     }
   },
   created(){
-    if(window.location.host == "kclub.azurewebsites.net"){
+    if(window.location.host == "icy-mud-0e58ea700.3.azurestaticapps.net"){
         this.api = "https://katch-prd-api.azurewebsites.net"
     }else{
         this.api = "https://katch-app-api-uat.azurewebsites.net"
