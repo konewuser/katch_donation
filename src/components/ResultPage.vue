@@ -223,9 +223,17 @@ export default {
             return 
         }
 
-        if(this.name.length >100||!/^[\u4e00-\u9fa5a-zA-Z\s]*$/.test(this.name)){
+        if(this.name.length >100){
             Swal.fire(
                 '申請人姓名太長'
+            )
+            this.disable = false;
+            return 
+        }
+
+        if(!/^[\u4e00-\u9fa5a-zA-Z\s]*$/.test(this.name)){
+            Swal.fire(
+                '請輸入正確名字'
             )
             this.disable = false;
             return 
