@@ -179,7 +179,7 @@ export default {
     if(window.location.host == "icy-mud-0e58ea700.3.azurestaticapps.net"){
         this.api = "https://katch-prd-api.azurewebsites.net"
     }else{
-        this.api = "https://katch-app-api-uat.azurewebsites.net"
+        this.api = "https://katch-prd-api.azurewebsites.net"
     }
   },
   methods: {
@@ -219,7 +219,7 @@ export default {
 
         var katch_id = this.katch_id.replace("katch1","").replace("Katch1","")
 
-        var api_call = await fetch('https://katch-app-api-uat.azurewebsites.net/api/katch_our_life_event', {
+        var api_call = await fetch(this.api+'/api/katch_our_life_event', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
