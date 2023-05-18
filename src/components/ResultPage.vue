@@ -61,7 +61,13 @@
                             <img src="@/assets/images/ticket01.jpg" class="object-cover">
                         </div>
                     </div>
-
+                    <div class="loader mx-auto" style="width: 50px;height: 50px;" v-show="!api_callback&&disable">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="xMidYMid">
+                            <circle cx="25" cy="25" fill="none" stroke="#FF7A00" stroke-width="4" r="20" stroke-dasharray="80 60" transform="rotate(275.845 25 25)">
+                                <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 25 25;360 25 25" keyTimes="0;1"></animateTransform>
+                            </circle>
+                        </svg>
+                    </div>
                     <div class="inline-block flex w-[100%]" v-show="!api_callback&&!disable">
                         <div class="bg-[#FF7A00]  mx-auto mt-[20px] pr-[30px] pl-[30px] text-[24px] rounded-[12px] font-bold" @click="submit" style="cursor: pointer;">
                             提交
@@ -212,6 +218,14 @@ export default {
         if(this.ticket_id.length != 8||!/^[A-Za-z]{2}\d{6}$/.test(this.ticket_id)){
             Swal.fire(
                 '門票編號錯誤'
+            )
+            this.disable = false;
+            return 
+        }
+
+        if(this.name.length >20||!/^[\u4e00-\u9fa5a-zA-Z\s]*$/.test(this.name)){
+            Swal.fire(
+                '申請人姓名太長'
             )
             this.disable = false;
             return 
