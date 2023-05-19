@@ -174,7 +174,7 @@ export default {
     return {
         name:"",
         ID:"",
-        katch_id:"",
+        katch_id:"Katch",
         ticket_id:"",
         api:"",
         api_callback:false,
