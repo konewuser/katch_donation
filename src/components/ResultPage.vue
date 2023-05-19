@@ -215,7 +215,7 @@ export default {
             return 
         }
 
-        if(this.ticket_id.length != 8||!/^[A-Za-z]{2}\d{6}$/.test(this.ticket_id)){
+        if(!/^[A-Za-z]{2}\d{6,7}$/.test(this.ticket_id)){
             Swal.fire(
                 '門票編號錯誤'
             )
